@@ -1,0 +1,24 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+* {
+    font-family: 'Fira Code', serif;
+}
+
+.nav-active {
+    border-bottom: 2px solid #fea55f;
+    color: #fea55f;
+    font-weight: bold;
+}
+
+
+/* #backdrop {
+    position: absolute;
+    z-index: -10;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    background: url(./assets/images/bg-1.jpg) center/cover no-repeat;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+} */
