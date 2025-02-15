@@ -35,10 +35,10 @@ const Navbar = () => {
 
                 {isMobileMenuOpen && (
                     <div className="lg:hidden absolute top-14 left-0 w-full bg-[#111827] p-4 space-y-2">
-                        <NavLink to="/" className={(e) => { return e.isActive ? "nav-active block py-2" : "block py-2" }} onClick={toggleMobileMenu}>_hello</NavLink>
-                        <NavLink to="/about" className={(e) => { return e.isActive ? "nav-active block py-2" : "block py-2" }} onClick={toggleMobileMenu}>_about-me</NavLink>
-                        <NavLink to="/projects" className={(e) => { return e.isActive ? "nav-active block py-2" : "block py-2" }} onClick={toggleMobileMenu}>_projects</NavLink>
-                        <NavLink to="/contact" className={(e) => { return e.isActive ? "nav-active block py-2" : "block py-2" }} onClick={toggleMobileMenu}>_contact-me</NavLink>
+                        <NavLink to="/" className={(e) => { return e.isActive ? "nav-active block w-max py-2" : "block w-max py-2" }} onClick={toggleMobileMenu}>_hello</NavLink>
+                        <NavLink to="/about" className={(e) => { return e.isActive ? "nav-active block w-max py-2" : "block w-max py-2" }} onClick={toggleMobileMenu}>_about-me</NavLink>
+                        <NavLink to="/projects" className={(e) => { return e.isActive ? "nav-active block w-max py-2" : "block w-max py-2" }} onClick={toggleMobileMenu}>_projects</NavLink>
+                        <NavLink to="/contact" className={(e) => { return e.isActive ? "nav-active block w-max py-2" : "block w-max py-2" }} onClick={toggleMobileMenu}>_contact-me</NavLink>
                     </div>
                 )}
             </nav>
