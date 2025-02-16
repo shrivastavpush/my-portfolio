@@ -1,11 +1,17 @@
 import './App.css'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
-import About from './components/About'
-import Project from './components/Project'
+import About from './components/About/About'
+import Project from './components/Project/Project'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import { createBrowserRouter, RouterProvider } from 'react-router'
+
+import Bio from './components/About/Bio'
+import Education from './components/About/Education'
+import Experience from './components/About/Experience'
+import Interests from './components/About/Interests'
+
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 function App() {
 
@@ -16,7 +22,25 @@ function App() {
     },
     {
       path: "/about",
-      element: <><Navbar /><About /><Footer /></>
+      element: <><Navbar /><About /><Footer /></>,
+      children: [
+        {
+          path: "bio",
+          element: <><Bio /></>
+        },
+        {
+          path: "education",
+          element: <><Education /></>
+        },
+        {
+          path: "experience",
+          element: <><Experience /></>
+        },
+        {
+          path: "interests",
+          element: <><Interests /></>
+        }
+      ]
     },
     {
       path: "/projects",
@@ -25,7 +49,7 @@ function App() {
     {
       path: "/contact",
       element: <><Navbar /><Contact /><Footer /></>
-    },
+    }
   ])
 
   return (

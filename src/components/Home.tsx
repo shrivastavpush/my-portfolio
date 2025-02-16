@@ -68,7 +68,7 @@ const Home = () => {
                                 onMouseLeave={() => setShowPopup(null)
                                 }>{item.variableName}</span>
 
-                            {showPopup === index && <span className="absolute text-white bottom-5 left-13 bg-black rounded p-1">(property) <span className="text-emerald-400">ContactInfoItem.label:</span> <span className="text-[#fea55f]">String</span></span>}
+                            {showPopup === index && <span className="absolute text-white bottom-5 left-14 bg-black rounded p-1">(property) <span className="text-emerald-400">ContactInfoItem.label:</span> <span className="text-[#fea55f]">String</span></span>}
                             <span className="text-gray-400"> = </span>
                             <a className="text-red-700" href={item.link} target="_blank">{item.value}</a>
                             <span className="text-gray-400">;</span>
