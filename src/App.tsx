@@ -11,52 +11,37 @@ import Education from './components/About/Education'
 import Experience from './components/About/Experience'
 import Interests from './components/About/Interests'
 
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, RouteObject } from 'react-router-dom'
+
+const routes: RouteObject[] = [
+  {
+    path: "/",
+    element: (<> <Navbar /> <Home /> <Footer /> </>)
+  },
+  {
+    path: "/about",
+    element: (<> <Navbar /> <About /> <Footer /> </>),
+    children: [
+      { path: "bio", element: <Bio /> },
+      { path: "education", element: <Education /> },
+      { path: "experience", element: <Experience /> },
+      { path: "interests", element: <Interests /> }
+    ]
+  },
+  {
+    path: "/projects",
+    element: (<> <Navbar /> <Project /> <Footer /> </>)
+  },
+  {
+    path: "/contact",
+    element: (<> <Navbar /> <Contact /> <Footer /> </>)
+  }
+]
+
+const router = createBrowserRouter(routes)
 
 function App() {
-
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <><Navbar /><Home /><Footer /></>
-    },
-    {
-      path: "/about",
-      element: <><Navbar /><About /><Footer /></>,
-      children: [
-        {
-          path: "bio",
-          element: <><Bio /></>
-        },
-        {
-          path: "education",
-          element: <><Education /></>
-        },
-        {
-          path: "experience",
-          element: <><Experience /></>
-        },
-        {
-          path: "interests",
-          element: <><Interests /></>
-        }
-      ]
-    },
-    {
-      path: "/projects",
-      element: <><Navbar /><Project /><Footer /></>
-    },
-    {
-      path: "/contact",
-      element: <><Navbar /><Contact /><Footer /></>
-    }
-  ])
-
-  return (
-    <>
-      <RouterProvider router={router} />
-    </>
-  )
+  return <RouterProvider router={router} />
 }
 
 export default App
