@@ -59,7 +59,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="mb-4">
-                    <label htmlFor="email" className="block text-emerald-400 font-bold mb-2"> Email </label>label
+                    <label htmlFor="email" className="block text-emerald-400 font-bold mb-2"> Email </label>
                     <input placeholder="Enter your email" type="email" id="email"
                         {...register("email", emailOptions)} className={`border rounded w-full py-2 px-3 text-[#fea55f] ${errors.email ? "border-red-500" : ""}`} />
                     {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}

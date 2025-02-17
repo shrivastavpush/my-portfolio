@@ -22,6 +22,7 @@ const routes: RouteObject[] = [
     path: "/about",
     element: (<> <Navbar /> <About /> <Footer /> </>),
     children: [
+      { index: true, element: <Bio /> },
       { path: "bio", element: <Bio /> },
       { path: "education", element: <Education /> },
       { path: "experience", element: <Experience /> },

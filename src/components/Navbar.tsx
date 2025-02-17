@@ -1,13 +1,7 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router'
+import { NavLink, useNavigate } from 'react-router'
 
 const Navbar: React.FC = () => {
-    // State for mobile menu
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
-
-    const toggleMobileMenu = (): void => {
-        setIsMobileMenuOpen((prev) => !prev)
-    }
 
     // CSS classes for desktop and mobile nav links
     const deskNavActive: string = "nav-active block py-2.5 px-5 m-0 border-l-2 border-l-zinc-800"
@@ -20,6 +14,45 @@ const Navbar: React.FC = () => {
 
     const linkClassMob = ({ isActive }: { isActive: boolean }): string =>
         isActive ? mobNavActive : mobNav
+
+    // type definations
+
+    interface NavLinkEntry {
+        to: string;
+        label: string;
+        onClick?: (event: React.MouseEvent<HTMLElement>) => void; // onClick is optional
+    }
+
+    type ToggleMobileMenuFunction = () => void;
+    type HandleAboutClickFunction = (event: React.MouseEvent<HTMLElement>) => void;
+
+    // State for mobile menu
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
+
+    const toggleMobileMenu: ToggleMobileMenuFunction = (): void => {
+        setIsMobileMenuOpen((prev) => !prev)
+    }
+
+    // to naviogate under /about
+    const navigate = useNavigate();
+
+    const handleAboutClick: HandleAboutClickFunction = (event: React.MouseEvent) => {
+        event.preventDefault();
+        navigate('/about/bio');
+    };
+
+
+    const navLinks: NavLinkEntry[] = [
+        { to: "/", label: "_home", onClick: toggleMobileMenu }, // toggleMobileMenu for other links
+        {
+            to: "/about", label: "_about", onClick: (event: React.MouseEvent) => {
+                handleAboutClick(event);
+                toggleMobileMenu();
+            }
+        },
+        { to: "/projects", label: "_projects", onClick: toggleMobileMenu },
+        { to: "/contact", label: "_contact_me", onClick: toggleMobileMenu },
+    ];
 
     return (
         <>
@@ -34,7 +67,7 @@ const Navbar: React.FC = () => {
                 <div className="lg:flex hidden">
                     <div className="lg:flex space-x-4">
                         <NavLink to="/" className={linkClassDesk}> _hello </NavLink>
-                        <NavLink to="/about/bio" className={linkClassDesk}> _about_me </NavLink>
+                        <NavLink to="/about" className={linkClassDesk} onClick={handleAboutClick}> _about_me </NavLink>
                         <NavLink to="/projects" className={linkClassDesk}> _projects </NavLink>
                     </div>
                     <div className="lg:flex">
@@ -44,10 +77,12 @@ const Navbar: React.FC = () => {
 
                 {/* mobile menu button */}
                 {isMobileMenuOpen && (<div className="lg:hidden absolute top-12.5 left-0 w-full bg-[#111827] px-4 py-2.5 space-y-2">
-                    <NavLink to="/" className={linkClassMob} onClick={toggleMobileMenu}> _hello </NavLink>
-                    <NavLink to="/about/bio" className={linkClassMob} onClick={toggleMobileMenu}> _about_me </NavLink>
-                    <NavLink to="/projects" className={linkClassMob} onClick={toggleMobileMenu}> _projects </NavLink>
-                    <NavLink to="/contact" className={linkClassMob} onClick={toggleMobileMenu}> _contact_me </NavLink> </div>)}
+                    {navLinks.map((item, index) => (
+                        <NavLink key={index} to={item.to} className={linkClassMob} onClick={item.onClick}>
+                            {item.label}
+                        </NavLink>
+                    ))}
+                </div>)}
             </nav>
         </>
     )

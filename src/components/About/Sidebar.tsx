@@ -11,10 +11,10 @@ interface NavLinkEntry {
 }
 
 const navLinks: NavLinkEntry[] = [
-    { to: "/about/bio", label: "_bio" },
-    { to: "/about/education", label: "_education" },
-    { to: "/about/experience", label: "_experience" },
-    { to: "/about/interests", label: "_interests" },
+    { to: "bio", label: "_bio" },
+    { to: "education", label: "_education" },
+    { to: "experience", label: "_experience" },
+    { to: "interests", label: "_interests" },
 ];
 
 const Sidebar = () => {
@@ -23,7 +23,7 @@ const Sidebar = () => {
 
     return (
         <aside className="w-full">
-            <nav className="flex items-center justify-between text-emerald-400 bg-[#111827] overflow-x-scroll lg:overflow-hidden">
+            <nav className="flex items-center justify-around text-emerald-400 bg-[#111827] overflow-x-scroll lg:overflow-hidden">
                 {navLinks.map((item, index) => (
                     <NavLink key={index} to={item.to} className={linkClass}>
                         {item.label}
