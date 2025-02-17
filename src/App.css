@@ -6,9 +6,3 @@ body {
     width: 100%;
     height: 100vh;
 }
-
-.nav-active {
-    border-bottom: 2px solid #fea55f;
-    color: #fea55f;
-    font-weight: bold;
-}
