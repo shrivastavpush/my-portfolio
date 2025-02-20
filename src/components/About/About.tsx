@@ -1,14 +1,12 @@
-import Sidebar from "./Sidebar"
+import BioNav from "./BioNav"
 import { Outlet } from "react-router"
 
 const About = () => {
 
     return (
         <>
-            {/* <div className="flex"> */}
-            <Sidebar />
+            <BioNav />
             <Outlet />
-            {/* </div> */}
         </>
     )
 }

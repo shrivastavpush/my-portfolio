@@ -10,7 +10,7 @@ interface NavLinkEntry {
     label: string;
 }
 
-const navLinks: NavLinkEntry[] = [
+const bioLinks: NavLinkEntry[] = [
     { to: "bio", label: "_bio" },
     { to: "education", label: "_education" },
     { to: "experience", label: "_experience" },
@@ -22,11 +22,12 @@ const activeClass: string = "border-b-1 border-b-[#fea55f] font-bold text-white"
 
 const linkClass = ({ isActive }: LinkClassNameArgs) =>
     `${isActive ? activeClass : defaultClass}`;
-const Sidebar = () => {
+
+const BioNav = () => {
 
     return (
         <nav className="flex w-full items-center justify-around text-emerald-400 bg-[#011627] overflow-x-scroll lg:overflow-hidden ">
-            {navLinks.map((item, index) => (
+            {bioLinks.map((item, index) => (
                 <NavLink key={index} to={item.to} className={linkClass}>
                     {item.label}
                 </NavLink>
@@ -35,4 +36,4 @@ const Sidebar = () => {
     );
 };
 
-export default Sidebar;
+export default BioNav;

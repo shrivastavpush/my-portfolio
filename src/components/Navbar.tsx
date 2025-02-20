@@ -25,6 +25,7 @@ const Navbar: React.FC = () => {
 
     type ToggleMobileMenuFunction = () => void;
     type HandleAboutClickFunction = (event: React.MouseEvent<HTMLElement>) => void;
+    type HandleProjectClickFunction = (event: React.MouseEvent<HTMLElement>) => void;
 
     // State for mobile menu
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -41,10 +42,15 @@ const Navbar: React.FC = () => {
         navigate('/about/bio');
     };
 
+    const handleProjectClick: HandleProjectClickFunction = (event) => {
+        event.preventDefault();
+        navigate('/projects/project_1');
+    };
+
     const navLinks: NavLinkEntry[] = [
         { to: "/", label: "_home", onClick: toggleMobileMenu },
         { to: "/about", label: "_about", onClick: (event) => { handleAboutClick(event); toggleMobileMenu(); }, },
-        { to: "/projects", label: "_projects", onClick: toggleMobileMenu },
+        { to: "/projects", label: "_projects", onClick: (event) => { handleProjectClick(event); toggleMobileMenu(); } },
         { to: "/contact", label: "_contact_me", onClick: toggleMobileMenu },
     ];
 
