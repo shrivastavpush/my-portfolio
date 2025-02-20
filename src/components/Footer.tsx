@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
                     );
                 })}
             </div>
-            <Link to="https://github.com/shrivastavsumit" target="_blank" className="flex items-center border-l-0 lg:border-l-2 lg:border-l-zinc-800 gap-1.5 hover:text-[#fea55f] py-2 pl-0 lg:pl-4" > @shrivastavsumit <FaGithub /> </Link>
+            <Link to="https://github.com/shrivastavpush" target="_blank" className="flex items-center border-l-0 lg:border-l-2 lg:border-l-zinc-800 gap-1.5 hover:text-[#fea55f] py-2 pl-0 lg:pl-4" > @shrivastavpush <FaGithub /> </Link>
         </footer>
     );
 };

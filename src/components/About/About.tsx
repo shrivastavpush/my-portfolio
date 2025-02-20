@@ -5,8 +5,10 @@ const About = () => {
 
     return (
         <>
+            {/* <div className="flex"> */}
             <Sidebar />
             <Outlet />
+            {/* </div> */}
         </>
     )
 }

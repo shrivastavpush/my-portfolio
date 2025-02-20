@@ -5,10 +5,10 @@ import { MdOutlineMenu } from "react-icons/md";
 const Navbar: React.FC = () => {
 
     const deskNav: string = "block py-2.5 px-5 m-0 border-l-2 border-l-zinc-800";
-    const deskNavActive: string = "border-b-2 border-b-[#fea55f] font-bold text-[#fea55f]" + " " + deskNav
+    const deskNavActive: string = "border-b-1 border-b-[#fea55f] font-bold text-white" + " " + deskNav
 
     const mobNav: string = "block w-max py-1.5 lg:py-2";
-    const mobNavActive: string = "border-b-2 border-b-[#fea55f] font-bold text-[#fea55f]" + " " + mobNav
+    const mobNavActive: string = "border-b-1 border-b-[#fea55f] font-bold text-white" + " " + mobNav
 
     const linkClassDesk = ({ isActive }: { isActive: boolean }): string =>
         isActive ? deskNavActive : deskNav;
