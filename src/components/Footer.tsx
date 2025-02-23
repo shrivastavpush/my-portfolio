@@ -28,7 +28,7 @@ const socialLinks: SocialLink[] = [
 
 const Footer: React.FC = () => {
     return (
-        <footer className="bg-[#111827] text-emerald-400 px-4 lg:px-5 flex justify-between items-center border-t-zinc-700 border-t-2">
+        <footer className="bg-black text-emerald-400 px-4 lg:px-5 flex justify-between items-center border-t-zinc-700 border-t-2">
             <div className="flex items-center space-x-4 justify-between">
                 <span className="border-r-2 border-r-zinc-600 py-2 pr-2 m-0">_find_me_on:</span>
                 {socialLinks.map((link) => {
