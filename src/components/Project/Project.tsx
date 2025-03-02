@@ -1,7 +1,8 @@
+import React from "react"
 import ProjectNav from "./ProjectNav"
 import { Outlet } from "react-router"
 
-const Project = () => {
+const Project: React.FC = () => {
     return (
         <>
             <ProjectNav />

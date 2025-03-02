@@ -4,18 +4,6 @@ import { MdOutlineMenu } from "react-icons/md";
 
 const Navbar: React.FC = () => {
 
-    const deskNav: string = "block py-2.5 px-5 m-0 border-l-2 border-l-zinc-800";
-    const deskNavActive: string = "border-b-1 border-b-[#fea55f] font-bold text-white" + " " + deskNav
-
-    const mobNav: string = "block w-max py-1.5 lg:py-2";
-    const mobNavActive: string = "border-b-1 border-b-[#fea55f] font-bold text-white" + " " + mobNav
-
-    const linkClassDesk = ({ isActive }: { isActive: boolean }): string =>
-        isActive ? deskNavActive : deskNav;
-
-    const linkClassMob = ({ isActive }: { isActive: boolean }): string =>
-        isActive ? mobNavActive : mobNav;
-
     // Types
     interface NavLinkEntry {
         to: string;
@@ -34,7 +22,13 @@ const Navbar: React.FC = () => {
         setIsMobileMenuOpen((prev) => !prev);
     };
 
-    // navigate for /about nested navigation
+    const linkClassDesk = ({ isActive }: { isActive: boolean }): string =>
+        isActive ? "desk-nav-active" : "desk-nav";
+
+    const linkClassMob = ({ isActive }: { isActive: boolean }): string =>
+        isActive ? "mob-nav-active" : "mob-nav";
+
+    // navigate for /about & /project nested navigation
     const navigate = useNavigate();
 
     const handleAboutClick: HandleAboutClickFunction = (event) => {
@@ -60,7 +54,7 @@ const Navbar: React.FC = () => {
     }
 
     return (
-        <nav className="bg-[#111827] text-emerald-400 px-4 lg:pl-5 lg:pr-0 lg:py-0 flex items-center justify-between sticky top-0 z-50 border-b-zinc-700 border-b-2">
+        <nav className="nav-style">
             <div className="flex items-center justify-between w-full lg:w-auto">
                 <NavLink to="/" className="pr-10 py-3 lg:py-2.5 border-r-zinc-700 border-r-2"
                     onClick={handleNavLinkClick(navLinks[0])}> pushpendra_shrivastav </NavLink>

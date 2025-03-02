@@ -1,41 +1,67 @@
+import React, { useState } from "react";
 
+interface Education {
+    degree: string,
+    school: string
+    year: string
+    description?: string
 
-const Education = () => {
+}
+const educationDetails: Education[] = [
+    {
+        degree: "B.Tech in Mechanical Engineering",
+        school: "Rajasthan Techanical University",
+        year: "2015 - 2019",
+        description: "Focused on software engineering and web technologies"
+    },
+    {
+        degree: "Full Stack Web Development",
+        school: "Tech Bootcamp",
+        year: "2023",
+        description: "Intensive program covering modern web development stack"
+    }
+]
+
+const Education: React.FC = () => {
+    const [selectedEduIndex, setSelectedEduIndex] = useState(0);
+
     return (
-        <div className="p-8 h-[83vh]">
-            <div className="mb-8">
-                <h1 className="text-3xl font-bold text-gray-900">Education</h1>
-                <p className="mt-2 text-gray-600">Academic background and certifications</p>
+        <section className="education-section">
+            <div className="w-1/2 pr-4">
+                {/* <h2 className="text-3xl font-bold text-gray-900 mb-4">Education</h2> */}
+                <p className="text-gray-600 mb-6">My Academic Journey</p>
+
+                <div className="timeline space-y-4">
+                    {educationDetails.map((edu, index) => (
+                        <div
+                            key={index}
+                            className={`timeline-entry cursor-pointer border-l-2 border-gray-300 pl-4 relative ${index === selectedEduIndex ? "text-blue-500" : "text-gray-600"
+                                }`}
+                            onClick={() => setSelectedEduIndex(index)}
+                        >
+                            <div
+                                className={`timeline-icon absolute -left-2.5 top-1/2 transform -translate-y-1/2 w-5 h-5 rounded-full bg-gray-300 ${index === selectedEduIndex ? "bg-blue-500" : ""
+                                    }`}
+                            ></div>
+                            <div className="timeline-content">
+                                <h3 className="text-lg font-medium">{edu.degree}</h3>
+                                <p className="text-sm text-gray-500">{edu.school}</p>
+                                <span className="text-xs text-gray-400">{edu.year}</span>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
 
-            <div className="space-y-6">
-                {[
-                    {
-                        degree: "Bachelor of Science in Computer Science",
-                        school: "University of Technology",
-                        year: "2018 - 2022",
-                        description: "Focused on software engineering and web technologies"
-                    },
-                    {
-                        degree: "Full Stack Web Development",
-                        school: "Tech Bootcamp",
-                        year: "2023",
-                        description: "Intensive program covering modern web development stack"
-                    }
-                ].map((edu, index) => (
-                    <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-                        <div className="flex justify-between items-start">
-                            <div>
-                                <h3 className="text-lg font-semibold text-gray-900">{edu.degree}</h3>
-                                <p className="text-gray-600 mt-1">{edu.school}</p>
-                            </div>
-                            <span className="text-sm text-gray-500">{edu.year}</span>
-                        </div>
-                        <p className="mt-4 text-gray-600">{edu.description}</p>
+            {/* Right Section */}
+            <div className="w-1/2 pl-4">
+                {educationDetails[selectedEduIndex] && (
+                    <div className="details-panel">
+                        <p className="text-gray-700">{educationDetails[selectedEduIndex].description}</p>
                     </div>
-                ))}
+                )}
             </div>
-        </div>
+        </section>
     );
 }
 

@@ -52,7 +52,7 @@ const Home: React.FC = () => {
     ];
 
     return (
-        <section className="flex items-center justify-center w-full h-[89.7vh] lg:h-[89vh] " id="homeSection">
+        <section className="section" id="homeSection">
             <div className="text-left mx-auto px-4 lg:px-0">
                 <h1 className="text-3xl lg:text-4xl text-[#fea55f] mb-2 lg:mb-4 ">Hi all. I am</h1>
                 <h2 className="text-4xl lg:text-5xl mb-4 lg:mb-5 text-gray-400 font-semibold">Pushpendra Shrivastav</h2>

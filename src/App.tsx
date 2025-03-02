@@ -1,3 +1,4 @@
+import React, { ReactNode } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
@@ -9,6 +10,7 @@ import Bio from './components/About/Bio/Bio'
 import Education from './components/About/Education/Education'
 import Experience from './components/About/Experience/Experience'
 import Interests from './components/About/Interests/Interests'
+import NotFoundPage from './components/NotFoundPage'
 
 import Project from './components/Project/Project'
 import Project1 from './components/Project/Project1/Project1'
@@ -17,7 +19,14 @@ import Project3 from './components/Project/Project3/Project3'
 
 import { createBrowserRouter, RouterProvider, RouteObject } from 'react-router-dom'
 
-const aboutChild = [
+
+interface RouteDefinition {
+  index?: boolean;
+  path?: string;
+  element: ReactNode;
+}
+
+const aboutChild: RouteDefinition[] = [
   { index: true, element: <Bio /> },
   { path: "bio", element: <Bio /> },
   { path: "education", element: <Education /> },
@@ -25,7 +34,7 @@ const aboutChild = [
   { path: "interests", element: <Interests /> }
 ]
 
-const projectChild = [
+const projectChild: RouteDefinition[] = [
   { index: true, element: <Project1 /> },
   { path: "project_1", element: <Project1 /> },
   { path: "project_2", element: <Project2 /> },
@@ -50,12 +59,16 @@ const routes: RouteObject[] = [
   {
     path: "/contact",
     element: (<> <Navbar /> <Contact /> <Footer /> </>)
+  },
+  {
+    path: "/*",
+    element: (<> <Navbar /> <NotFoundPage /><Footer /> </>)
   }
 ]
 
 const router = createBrowserRouter(routes)
 
-function App() {
+const App: React.FC = () => {
   return <RouterProvider router={router} />
 }
 

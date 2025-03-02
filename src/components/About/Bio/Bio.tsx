@@ -4,10 +4,10 @@ import TechStack from "./TechStack";
 const Bio = () => {
     return (
         <>
-            <div className="flex h-[89vh] w-screen bg-[#011627]">
+            <section className="flex h-[89vh] w-screen bg-[#011627]">
                 <Skills />
                 <TechStack />
-            </div>
+            </section>
         </>
     );
 };

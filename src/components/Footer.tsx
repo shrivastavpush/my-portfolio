@@ -16,25 +16,25 @@ const socialLinks: SocialLink[] = [
         name: "LinkedIn",
         url: "https://www.linkedin.com/in/pushpendra-shrivastav/",
         icon: FaLinkedin,
-        borderClass: "border-r-2 border-r-zinc-600",
+        borderClass: "bordered-tab",
     },
     {
         name: "Portfolio",
         url: "https://pushpendra-portfolio.netlify.app/",
         icon: GrPersonalComputer,
-        borderClass: "border-r-2 border-r-zinc-600",
+        borderClass: "bordered-tab",
     },
 ];
 
 const Footer: React.FC = () => {
     return (
-        <footer className="bg-black text-emerald-400 px-4 lg:px-5 flex justify-between items-center border-t-zinc-700 border-t-2">
+        <footer className="footer-style">
             <div className="flex items-center space-x-4 justify-between">
-                <span className="border-r-2 border-r-zinc-600 py-2 pr-2 m-0">_find_me_on:</span>
+                <span className="bordered-tab pr-2">_find_me_on:</span>
                 {socialLinks.map((link) => {
                     const Icon = link.icon;
                     return (
-                        <Link key={link.name} to={link.url} target="_blank" className={`${link.borderClass} py-2 px-3 m-0`} >
+                        <Link key={link.name} to={link.url} target="_blank" className={`${link.borderClass} px-3 `} >
                             <Icon className="text-xl hover:text-[#fea55f]" />
                         </Link>
                     );

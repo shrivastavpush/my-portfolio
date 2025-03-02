@@ -48,7 +48,7 @@ const Contact: React.FC = () => {
     };
 
     return (
-        <div className="flex items-center justify-center gap-y-2.5 w-full h-[89.7vh] lg:h-[89vh] bg-gray-800 flex-col">
+        <section className="flex items-center justify-center gap-y-2.5 w-full h-[89.7vh] lg:h-[89vh] bg-gray-800 flex-col">
             <h2 className="text-2xl text-emerald-400 text-center m-0">drop a message</h2>
             <form onSubmit={handleSubmit(onSubmit)} className="w-[75%] lg:w-[60%] mx-auto">
                 <div className="mb-4">
@@ -82,7 +82,7 @@ const Contact: React.FC = () => {
 
                 <button disabled={isSubmitting} type="submit" className="bg-emerald-400 text-black hover:bg-[#fea55f] hover:text-white font-bold py-2 px-4 rounded cursor-pointer transition-all" > Submit </button>
             </form>
-        </div>
+        </section>
     );
 };
 
