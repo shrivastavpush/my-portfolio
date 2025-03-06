@@ -1,14 +1,12 @@
 import React from "react";
-import { Link } from "react-router";
-
+import { Link } from "react-router-dom";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { GrPersonalComputer } from "react-icons/gr";
+import { MdLaptopMac } from "react-icons/md";
 
 interface SocialLink {
     name: string;
     url: string;
     icon: React.ComponentType<{ className?: string }>;
-    borderClass: string;
 }
 
 const socialLinks: SocialLink[] = [
@@ -16,31 +14,48 @@ const socialLinks: SocialLink[] = [
         name: "LinkedIn",
         url: "https://www.linkedin.com/in/pushpendra-shrivastav/",
         icon: FaLinkedin,
-        borderClass: "bordered-tab",
     },
     {
         name: "Portfolio",
         url: "https://pushpendra-portfolio.netlify.app/",
-        icon: GrPersonalComputer,
-        borderClass: "bordered-tab",
+        icon: MdLaptopMac,
     },
 ];
 
 const Footer: React.FC = () => {
     return (
-        <footer className="footer-style">
-            <div className="flex items-center space-x-4 justify-between">
-                <span className="bordered-tab pr-2">_find_me_on:</span>
-                {socialLinks.map((link) => {
-                    const Icon = link.icon;
-                    return (
-                        <Link key={link.name} to={link.url} target="_blank" className={`${link.borderClass} px-3 `} >
-                            <Icon className="text-xl hover:text-[#fea55f]" />
-                        </Link>
-                    );
-                })}
+        <footer className="bg-[#011627] border-t border-white/10 py-2 lg:py-1 px-4 text-gray-300 font-['Fira_Code'] shadow-lg">
+            <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between">
+                <div className="flex items-center space-x-2 sm:space-x-4 sm:mb-0">
+                    <span className="text-sm sm:text-base text-[#fea55f] border-r border-zinc-700 pr-3">_find_me_on:</span>
+                    <div className="flex items-center space-x-3">
+                        {socialLinks.map((link) => {
+                            const Icon = link.icon;
+                            return (
+                                <Link
+                                    key={link.name}
+                                    to={link.url}
+                                    target="_blank"
+                                    className="px-2 py-1 hover:bg-white/5 rounded-md transition-all duration-300 flex items-center"
+                                    aria-label={link.name}
+                                >
+                                    <Icon className="text-xl hover:text-[#fea55f] transition-colors duration-200" />
+                                </Link>
+                            );
+                        })}
+                    </div>
+                </div>
+
+                <Link
+                    to="https://github.com/shrivastavpush"
+                    target="_blank"
+                    className="flex items-center gap-2 hover:text-[#fea55f] transition-colors duration-200 border-l border-zinc-700 pl-3 sm:pl-4 py-1"
+                    aria-label="GitHub Profile"
+                >
+                    <span className="text-sm sm:text-base">@shrivastavpush</span>
+                    <FaGithub className="text-lg" />
+                </Link>
             </div>
-            <Link to="https://github.com/shrivastavpush" target="_blank" className="flex items-center border-l-0 lg:border-l-2 lg:border-l-zinc-800 gap-1.5 hover:text-[#fea55f] py-2 pl-0 lg:pl-4" > @shrivastavpush <FaGithub /> </Link>
         </footer>
     );
 };
