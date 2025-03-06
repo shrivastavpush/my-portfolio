@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
-import { MdOutlineMenu } from "react-icons/md";
+import React, { useState, useEffect } from 'react';
+import { NavLink, useNavigate, useLocation } from 'react-router-dom';
+import { MdOutlineMenu, MdClose } from "react-icons/md";
 
 const Navbar: React.FC = () => {
 
@@ -17,16 +17,42 @@ const Navbar: React.FC = () => {
 
     // State for mobile menu
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+    const location = useLocation();
+
+    // Handle scroll effect
+    useEffect(() => {
+        const handleScroll = () => {
+            const isScrolled = window.scrollY > 10;
+            if (isScrolled !== scrolled) {
+                setScrolled(isScrolled);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [scrolled]);
+
+    // Close mobile menu when route changes
+    useEffect(() => {
+        setIsMobileMenuOpen(false);
+    }, [location]);
 
     const toggleMobileMenu: ToggleMobileMenuFunction = () => {
         setIsMobileMenuOpen((prev) => !prev);
     };
 
     const linkClassDesk = ({ isActive }: { isActive: boolean }): string =>
-        isActive ? "desk-nav-active" : "desk-nav";
+        isActive
+            ? "relative px-4 py-2.5 text-[#fea55f] border-b-2 border-[#fea55f] transition-all duration-300 hover:bg-white/5"
+            : "relative px-4 py-2.5 text-gray-300 border-b-2 border-transparent transition-all duration-300 hover:text-white hover:bg-white/5 hover:border-white/20";
 
     const linkClassMob = ({ isActive }: { isActive: boolean }): string =>
-        isActive ? "mob-nav-active" : "mob-nav";
+        isActive
+            ? "block w-full py-3 px-4 text-[#fea55f] border-l-4 border-[#fea55f] bg-white/10 backdrop-blur-sm rounded-md transition-all duration-300 font-medium"
+            : "block w-full py-3 px-4 text-gray-300 border-l-2 border-transparent hover:text-white hover:border-white/20 hover:bg-white/5 transition-all duration-300 rounded-md";
 
     // navigate for /about & /project nested navigation
     const navigate = useNavigate();
@@ -54,40 +80,67 @@ const Navbar: React.FC = () => {
     }
 
     return (
-        <nav className="nav-style">
-            <div className="flex items-center justify-between w-full lg:w-auto">
-                <NavLink to="/" className="pr-10 py-3 lg:py-2.5 border-r-zinc-700 border-r-2"
-                    onClick={handleNavLinkClick(navLinks[0])}> pushpendra_shrivastav </NavLink>
-                <button className="lg:hidden ml-4 text-white hover:text-gray-300 focus:outline-none"
-                    onClick={toggleMobileMenu} >
-                    <MdOutlineMenu className={isMobileMenuOpen ? "text-[#fea55f] text-xl" : "text-white text-xl"} />
-                </button>
-            </div>
+        <>
+            {/* Add a smaller spacer div to prevent content from being hidden behind the navbar */}
+            <div className="h-13 lg:h-12"></div>
 
-            <div className="lg:flex hidden">
-                <div className="lg:flex space-x-4">
-                    {navLinks.slice(0, 4).map((item, index) => (
-                        <NavLink key={index} to={item.to}
-                            className={linkClassDesk}
-                            onClick={handleNavLinkClick(item)} >
-                            {item.label}
-                        </NavLink>
-                    ))}
-                </div>
-            </div>
+            <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-[#011627]/90 backdrop-blur-md shadow-lg' : 'bg-[#011627]'}`}>
+                <div className="container mx-auto px-3">
+                    <div className="flex items-center justify-between h-14">
+                        <div className="flex items-center">
+                            <NavLink
+                                to="/"
+                                className="pr-8 py-2 border-r-zinc-700 border-r-2 text-gray-200 hover:text-[#fea55f] transition-colors duration-300 font-['Fira_Code']"
+                                onClick={handleNavLinkClick(navLinks[0])}
+                            >
+                                <span className="text-[#fea55f]">&gt;</span> pushpendra_shrivastav
+                            </NavLink>
+                        </div>
 
-            {isMobileMenuOpen && (
-                <div className="lg:hidden absolute top-12.5 left-0 w-full bg-[#111827] px-4 py-2.5 space-y-2">
-                    {navLinks.map((item, index) => (
-                        <NavLink key={index} to={item.to}
-                            className={linkClassMob}
-                            onClick={handleNavLinkClick(item)} >
-                            {item.label}
-                        </NavLink>
-                    ))}
+                        <div className="hidden lg:flex items-center">
+                            {navLinks.map((item, index) => (
+                                <NavLink
+                                    key={index}
+                                    to={item.to}
+                                    className={linkClassDesk}
+                                    onClick={handleNavLinkClick(item)}
+                                >
+                                    <span className="font-['Fira_Code']">{item.label}</span>
+                                </NavLink>
+                            ))}
+                        </div>
+
+                        <button
+                            className="lg:hidden text-white hover:text-[#fea55f] focus:outline-none transition-transform duration-300 transform hover:scale-110"
+                            onClick={toggleMobileMenu}
+                        >
+                            {isMobileMenuOpen ?
+                                <MdClose className="text-[#fea55f] text-2xl" /> :
+                                <MdOutlineMenu className="text-white text-2xl" />
+                            }
+                        </button>
+                    </div>
                 </div>
-            )}
-        </nav>
+
+                <div
+                    className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'
+                        }`}
+                >
+                    <div className="bg-[#011627]/95 backdrop-blur-md border-t border-white/10 px-3 py-2 space-y-1 shadow-lg">
+                        {navLinks.map((item, index) => (
+                            <NavLink
+                                key={index}
+                                to={item.to}
+                                className={linkClassMob}
+                                onClick={handleNavLinkClick(item)}
+                            >
+                                <span className="font-['Fira_Code']">{item.label}</span>
+                            </NavLink>
+                        ))}
+                    </div>
+                </div>
+            </nav>
+        </>
     );
 };
 
