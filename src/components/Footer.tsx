@@ -25,7 +25,7 @@ const socialLinks: SocialLink[] = [
 const Footer: React.FC = () => {
     return (
         <footer className="bg-[#011627] border-t border-white/10 py-2 lg:py-1 px-4 text-gray-300 font-['Fira_Code'] shadow-lg">
-            <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between">
+            <div className="container mx-auto flex items-center justify-between">
                 <div className="flex items-center space-x-2 sm:space-x-4 sm:mb-0">
                     <span className="text-sm sm:text-base text-[#fea55f] border-r border-zinc-700 pr-3">_find_me_on:</span>
                     <div className="flex items-center space-x-3">

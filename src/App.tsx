@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import Home from './components/Home/Home'
-import Contact from './components/Contact'
+import Contact from './components/Contact/Contact'
 import Footer from './components/Footer'
 
 import About from './components/About/About'
