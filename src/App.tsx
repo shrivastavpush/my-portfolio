@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
-import Home from './components/Home'
+import Home from './components/Home/Home'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
