@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { FiCalendar, FiBookOpen, FiInfo } from "react-icons/fi";
 
 interface Education {
     degree: string;
@@ -10,71 +11,70 @@ interface Education {
 const educationDetails: Education[] = [
     {
         degree: "B.Tech in Mechanical Engineering",
-        school: "Rajasthan Techanical University",
+        school: "Rajasthan Technical University",
         year: "2015 - 2019",
-        description: "Focused on software engineering and web technologies"
+        description: "Focused on software engineering and web technologies. Completed coursework in programming fundamentals, data structures, and web development alongside mechanical engineering curriculum."
     },
     {
-        degree: "Full Stack Web Development",
-        school: "Tech Bootcamp",
-        year: "2023",
-        description: "Intensive program covering modern web development stack"
+        degree: "Reactjs fundamentals",
+        school: "Simplilearn",
+        year: "2022",
+        description: "Learned the basics of Reactjs. Learned component architecture, state management, hooks, and building responsive user interfaces with React."
+    },
+    {
+        degree: "Responsive Web Design",
+        school: "FreeCodeCamp",
+        year: "2022",
+        description: "Learned HTML, CSS, and JavaScript to create responsive and accessible web pages. Focused on building a strong foundation in web development fundamentals."
     }
 ];
 
 const Education: React.FC = () => {
-    const [selectedEduIndex, setSelectedEduIndex] = useState<number>(0);
-
     return (
-        <section className="flex flex-col lg:flex-row w-full h-[83vh] bg-[#011627] p-8 relative overflow-hidden">
-            {/* Background decorative elements */}
-            <div className="absolute top-10 left-10 w-20 h-20 rounded-full bg-emerald-500 opacity-10 blur-xl"></div>
-            <div className="absolute bottom-20 right-20 w-32 h-32 rounded-full bg-purple-500 opacity-10 blur-xl"></div>
+        <section className="h-[calc(100vh-8rem)] bg-[#011627] p-4 md:p-8 overflow-y-auto">
+            <div className="max-w-6xl mx-auto flex flex-col">
+                <div className="text-center mb-8 sticky top-0 bg-[#011627] pt-2 pb-4 z-10">
+                    <h2 className="text-2xl md:text-3xl font-bold text-emerald-400 font-['Fira_Code'] mb-3">Educational Journey</h2>
+                    <p className="text-emerald-300/80 font-['Fira_Code'] text-sm md:text-base">My academic background and certifications</p>
+                </div>
 
-            {/* Decorative Text */}
-            <div className="absolute -top-5 left-0 text-[4rem] md:text-[6rem] lg:text-[8rem] font-bold text-emerald-900/20 select-none">
-                Learn
-            </div>
-            <div className="absolute bottom-0 right-0 text-[3rem] md:text-[4rem] lg:text-[6rem] font-bold text-emerald-900/20 select-none hidden md:block">
-                Growth
-            </div>
-
-            {/* Left Section */}
-            <div className="w-full lg:w-1/2 lg:pr-8 mb-8 lg:mb-0 flex flex-col h-full">
-                <h2 className="text-2xl font-bold text-emerald-400 font-['Fira_Code'] mb-4">Educational Journey</h2>
-                <div className="space-y-4 flex-1 overflow-y-auto px-2 pt-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-4">
                     {educationDetails.map((edu, index) => (
                         <div
                             key={index}
-                            onClick={() => setSelectedEduIndex(index)}
-                            className={`group relative pl-6 border-l-2 cursor-pointer transition-all duration-300 ${index === selectedEduIndex
-                                ? "border-emerald-400"
-                                : "border-emerald-800 hover:border-emerald-600"
-                                }`}
+                            className="group relative h-full"
                         >
-                            <div className={`absolute -left-[9px] top-1 w-4 h-4 rounded-full border-2 transition-colors duration-300 ${index === selectedEduIndex
-                                ? "bg-emerald-900 border-emerald-400"
-                                : "bg-[#011627] border-emerald-800"
-                                }`}></div>
-                            <div className="bg-[#01111d] rounded-lg p-4 border border-emerald-900 transition-all duration-300 group-hover:shadow-[0_0_15px_rgba(49,196,141,0.15)] group-hover:border-emerald-700 relative z-10">
-                                <h3 className="text-lg font-['Fira_Code'] text-emerald-400">{edu.degree}</h3>
-                                <p className="text-sm text-emerald-300 mt-1">{edu.school}</p>
-                                <span className="text-xs text-emerald-600 font-['Fira_Code']">{edu.year}</span>
+                            <div className="bg-[#01111d] h-full rounded-xl p-6 border border-emerald-900/50 transition-all duration-300 hover:border-emerald-400 hover:shadow-lg hover:shadow-emerald-900/20 flex flex-col">
+                                <div className="mb-4">
+                                    <h3 className="text-lg md:text-xl font-['Fira_Code'] text-emerald-400 flex items-center">
+                                        <FiBookOpen className="mr-2" />
+                                        {edu.degree}
+                                    </h3>
+                                    <p className="text-sm md:text-base text-emerald-300/80 mt-2">{edu.school}</p>
+                                    <div className="flex items-center mt-2 text-xs md:text-sm text-emerald-500/80 font-['Fira_Code']">
+                                        <FiCalendar className="mr-1" />
+                                        <span>{edu.year}</span>
+                                    </div>
+                                </div>
+
+                                <div className="mt-auto">
+                                    <div className="relative overflow-hidden transition-all duration-300 max-h-0 group-hover:max-h-40">
+                                        <div className="pt-4 border-t border-emerald-900/30">
+                                            <div className="flex items-start">
+                                                <FiInfo className="text-emerald-400 mt-1 mr-2 flex-shrink-0" />
+                                                <p className="text-emerald-200/90 font-['Fira_Code'] text-sm leading-relaxed">
+                                                    {edu.description}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="text-center text-xs text-emerald-500 mt-2 opacity-70 group-hover:opacity-0 transition-opacity duration-300">
+                                        Hover for details
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     ))}
-                </div>
-            </div>
-
-            {/* Right Section */}
-            <div className="w-full lg:w-1/2 lg:pl-8">
-                <div className="bg-[#01111d] rounded-xl p-6 border border-emerald-900 shadow-[0_0_15px_rgba(49,196,141,0.15)]">
-                    <h3 className="text-xl font-['Fira_Code'] text-emerald-400 mb-4">Details</h3>
-                    {educationDetails[selectedEduIndex] && (
-                        <p className="text-emerald-200 font-['Fira_Code'] leading-relaxed">
-                            {educationDetails[selectedEduIndex].description}
-                        </p>
-                    )}
                 </div>
             </div>
         </section>
