@@ -66,7 +66,9 @@ const routes: RouteObject[] = [
   }
 ]
 
-const router = createBrowserRouter(routes)
+const router = createBrowserRouter(routes, {
+  basename: import.meta.env.BASE_URL || '/'
+})
 
 const App: React.FC = () => {
   return <RouterProvider router={router} />
