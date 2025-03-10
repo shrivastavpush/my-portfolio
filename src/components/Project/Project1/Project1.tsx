@@ -11,7 +11,7 @@ interface TechStack {
 const Project1: React.FC = () => {
     const projectDetails = {
         title: "Portfolio Website",
-        description: "A modern, responsive portfolio website built with React and JavaScript. Features a clean design, smooth animations, and interactive components. Implements best practices for accessibility and performance.",
+        description: "A modern, responsive portfolio website built with React and JavaScript. Features a clean design, smooth animations, and interactive components.",
         image: Portfolio,
         liveLink: "https://push-react-port-template.netlify.app/",
         githubLink: "https://github.com/404",
