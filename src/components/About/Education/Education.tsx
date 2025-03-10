@@ -50,11 +50,11 @@ const Education: React.FC = () => {
         <section className="h-[calc(100vh-8rem)] bg-[#011627] p-4 md:p-8 overflow-y-auto">
             <div className="max-w-6xl mx-auto flex flex-col">
                 <div className="text-center mb-8 bg-[#011627] pt-2 pb-4 z-10">
-                    <h2 className="text-2xl md:text-3xl font-bold text-emerald-400 font-['Fira_Code'] mb-3 relative inline-block">
+                    <h2 className="text-2xl md:text-3xl font-bold text-emerald-400 font-fira-code mb-3 relative inline-block">
                         Educational Journey
                         <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-emerald-500/0 via-emerald-500/50 to-emerald-500/0"></div>
                     </h2>
-                    <p className="text-emerald-300/80 font-['Fira_Code'] text-sm md:text-base mt-4">My academic background and certifications</p>
+                    <p className="text-emerald-300/80 font-fira-code text-sm md:text-base mt-4">My academic background and certifications</p>
                 </div>
 
                 <div className="grid grid-cols-1 gap-8 pb-4">
@@ -70,7 +70,7 @@ const Education: React.FC = () => {
                                             <div className="bg-emerald-500/10 rounded-lg p-2">
                                                 <FiBookOpen className="text-2xl text-emerald-400" />
                                             </div>
-                                            <h3 className="text-lg md:text-xl font-['Fira_Code'] text-emerald-400">{edu.degree}</h3>
+                                            <h3 className="text-lg md:text-xl font-fira-code text-emerald-400">{edu.degree}</h3>
                                         </div>
 
                                         <div className="space-y-3">
@@ -78,13 +78,13 @@ const Education: React.FC = () => {
                                                 <FiInfo className="text-emerald-500/80" />
                                                 {edu.school}
                                             </p>
-                                            <p className="text-xs md:text-sm text-emerald-500/80 font-['Fira_Code'] flex items-center gap-2">
+                                            <p className="text-xs md:text-sm text-emerald-500/80 font-fira-code flex items-center gap-2">
                                                 <FiCalendar className="text-emerald-500/80" />
                                                 {edu.year}
                                             </p>
                                         </div>
 
-                                        <p className="mt-4 text-emerald-200/90 font-['Fira_Code'] text-sm md:text-base leading-relaxed">
+                                        <p className="mt-4 text-emerald-200/90 font-fira-code text-sm md:text-base leading-relaxed">
                                             {edu.description}
                                         </p>
                                     </div>
@@ -93,11 +93,11 @@ const Education: React.FC = () => {
                                         <div className="md:w-2/5 bg-emerald-900/10 rounded-lg p-4 border border-emerald-900/30">
                                             <div className="flex items-center gap-2 mb-3">
                                                 <FiAward className="text-emerald-400" />
-                                                <h4 className="text-sm font-['Fira_Code'] text-emerald-400">Key Achievements</h4>
+                                                <h4 className="text-sm font-fira-code text-emerald-400">Key Achievements</h4>
                                             </div>
                                             <ul className="space-y-2">
                                                 {edu.achievements.map((achievement, i) => (
-                                                    <li key={i} className="text-emerald-200/90 font-['Fira_Code'] text-sm flex items-center">
+                                                    <li key={i} className="text-emerald-200/90 font-fira-code text-sm flex items-center">
                                                         <span className="text-emerald-500/80 mr-2">›</span>
                                                         {achievement}
                                                     </li>

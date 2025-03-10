@@ -44,8 +44,8 @@ const Project2: React.FC = () => {
             <div className="max-w-6xl mx-auto w-full h-full flex flex-col gap-6 z-10">
                 {/* Project Header */}
                 <div className="text-center backdrop-blur-sm bg-[#16213e]/50 p-4 sm:p-6 rounded-2xl border border-[#e94560]/20">
-                    <h2 className="text-xl sm:text-2xl font-bold text-[#e94560] font-['Fira_Code'] mb-2 sm:mb-3">{projectDetails.title}</h2>
-                    <p className="text-sm sm:text-base text-gray-300 font-['Fira_Code'] leading-relaxed max-w-5xl mx-auto">
+                    <h2 className="text-xl sm:text-2xl font-bold text-[#e94560] font-fira-code mb-2 sm:mb-3">{projectDetails.title}</h2>
+                    <p className="text-sm sm:text-base text-gray-300 font-fira-code leading-relaxed max-w-5xl mx-auto">
                         {projectDetails.description}
                     </p>
                     {/* Links */}
@@ -57,7 +57,7 @@ const Project2: React.FC = () => {
                             className="flex items-center justify-center gap-2 bg-[#0f3460] hover:bg-[#0f3460]/80 text-white px-3 sm:px-4 py-2 rounded-lg transition-colors duration-300 w-full sm:w-auto"
                         >
                             <FiGithub />
-                            <span className="font-['Fira_Code'] text-xs sm:text-sm">GitHub</span>
+                            <span className="font-fira-code text-xs sm:text-sm">GitHub</span>
                         </a>
                         <a
                             href={projectDetails.liveLink}
@@ -66,7 +66,7 @@ const Project2: React.FC = () => {
                             className="flex items-center justify-center gap-2 bg-[#e94560] hover:bg-[#e94560]/80 text-white px-3 sm:px-4 py-2 rounded-lg transition-colors duration-300 w-full sm:w-auto"
                         >
                             <FiExternalLink />
-                            <span className="font-['Fira_Code'] text-xs sm:text-sm">Live Demo</span>
+                            <span className="font-fira-code text-xs sm:text-sm">Live Demo</span>
                         </a>
                     </div>
                 </div>
@@ -96,11 +96,11 @@ const Project2: React.FC = () => {
                                     <div className="bg-[#16213e] rounded-xl p-6 border border-[#0f3460] transition-all duration-300 group-hover:shadow-[0_0_15px_rgba(233,69,96,0.2)] group-hover:border-[#e94560]/50">
                                         <div className="flex items-center mb-4">
                                             <span className="text-[#e94560] text-xl mr-3 bg-[#0f3460]/50 p-2 rounded-lg">{tech.icon}</span>
-                                            <h4 className="text-lg font-['Fira_Code'] text-white">{tech.category}</h4>
+                                            <h4 className="text-lg font-fira-code text-white">{tech.category}</h4>
                                         </div>
                                         <ul className="space-y-2">
                                             {tech.items.map((item, itemIndex) => (
-                                                <li key={itemIndex} className="text-gray-300 font-['Fira_Code'] text-sm flex items-center">
+                                                <li key={itemIndex} className="text-gray-300 font-fira-code text-sm flex items-center">
                                                     <span className="text-[#e94560] mr-2">›</span>
                                                     {item}
                                                 </li>

@@ -89,7 +89,7 @@ const Contact: React.FC = () => {
                         <div className="mb-4 text-center">
                             <div className="inline-flex items-center justify-center mb-2">
                                 <FiCode className="text-[#fea55f] text-xl mr-2" />
-                                <h2 className="text-2xl font-bold text-emerald-400 relative inline-block font-['Fira_Code']">
+                                <h2 className="text-2xl font-bold text-emerald-400 relative inline-block font-fira-code">
                                     <span className="relative z-10">
                                         <span className="typing-cursor">{typingEffect}</span>
                                     </span>
@@ -103,17 +103,17 @@ const Contact: React.FC = () => {
                                 <div className="inline-block p-4 rounded-full bg-emerald-900/30 text-emerald-400 text-3xl mb-4">
                                     <FiCheckCircle className="animate-pulse" />
                                 </div>
-                                <h3 className="text-xl font-bold text-emerald-300 mb-2 font-['Fira_Code']">Message Sent!</h3>
-                                <p className="text-emerald-100 opacity-80 font-['Fira_Code']">Thanks for reaching out. I'll get back to you soon!</p>
+                                <h3 className="text-xl font-bold text-emerald-300 mb-2 font-fira-code">Message Sent!</h3>
+                                <p className="text-emerald-100 opacity-80 font-fira-code">Thanks for reaching out. I'll get back to you soon!</p>
                                 <div className="mt-6 text-xs text-emerald-500 font-mono">
                                     // response.status = 200
                                 </div>
                             </div>
                         ) : (
-                            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 font-['Fira_Code']">
+                            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 font-fira-code">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div className="group relative">
-                                        <label htmlFor="name" className="flex text-emerald-400 text-xs mb-1 items-center font-['Fira_Code']">
+                                        <label htmlFor="name" className="flex text-emerald-400 text-xs mb-1 items-center font-fira-code">
                                             <span className="text-emerald-500 mr-2">&gt;</span>
                                             <FiUser className="mr-1" />
                                             name:
@@ -124,14 +124,14 @@ const Contact: React.FC = () => {
                                                 type="text"
                                                 id="name"
                                                 {...register("name", nameOptions)}
-                                                className={`w-full bg-[#01111d] border-2 rounded-md py-1.5 px-3 text-emerald-100 placeholder-emerald-700 focus:outline-none focus:ring-1 focus:ring-emerald-500 transition-all duration-300 font-['Fira_Code'] ${errors.name ? "border-red-500 focus:ring-red-500" : "border-emerald-900/50"}`}
+                                                className={`w-full bg-[#01111d] border-2 rounded-md py-1.5 px-3 text-emerald-100 placeholder-emerald-700 focus:outline-none focus:ring-1 focus:ring-emerald-500 transition-all duration-300 font-fira-code ${errors.name ? "border-red-500 focus:ring-red-500" : "border-emerald-900/50"}`}
                                             />
                                         </div>
-                                        {errors.name && <p className="text-red-400 text-xs mt-1 h-4 font-['Fira_Code']">{errors.name.message}</p>}
+                                        {errors.name && <p className="text-red-400 text-xs mt-1 h-4 font-fira-code">{errors.name.message}</p>}
                                     </div>
 
                                     <div className="group relative">
-                                        <label htmlFor="email" className="flex text-emerald-400 text-xs mb-1 items-center font-['Fira_Code']">
+                                        <label htmlFor="email" className="flex text-emerald-400 text-xs mb-1 items-center font-fira-code">
                                             <span className="text-emerald-500 mr-2">&gt;</span>
                                             <FiMail className="mr-1" />
                                             email:
@@ -142,15 +142,15 @@ const Contact: React.FC = () => {
                                                 type="email"
                                                 id="email"
                                                 {...register("email", emailOptions)}
-                                                className={`w-full bg-[#01111d] border-2 rounded-md py-1.5 px-3 text-emerald-100 placeholder-emerald-700 focus:outline-none focus:ring-1 focus:ring-emerald-500 transition-all duration-300 font-['Fira_Code'] ${errors.email ? "border-red-500 focus:ring-red-500" : "border-emerald-900/50"}`}
+                                                className={`w-full bg-[#01111d] border-2 rounded-md py-1.5 px-3 text-emerald-100 placeholder-emerald-700 focus:outline-none focus:ring-1 focus:ring-emerald-500 transition-all duration-300 font-fira-code ${errors.email ? "border-red-500 focus:ring-red-500" : "border-emerald-900/50"}`}
                                             />
                                         </div>
-                                        {errors.email && <p className="text-red-400 text-xs mt-1 h-4 font-['Fira_Code']">{errors.email.message}</p>}
+                                        {errors.email && <p className="text-red-400 text-xs mt-1 h-4 font-fira-code">{errors.email.message}</p>}
                                     </div>
                                 </div>
 
                                 <div className="group relative">
-                                    <label htmlFor="subject" className="flex text-emerald-400 text-xs mb-1 items-center font-['Fira_Code']">
+                                    <label htmlFor="subject" className="flex text-emerald-400 text-xs mb-1 items-center font-fira-code">
                                         <span className="text-emerald-500 mr-2">&gt;</span>
                                         <FiTag className="mr-1" />
                                         subject:
@@ -161,14 +161,14 @@ const Contact: React.FC = () => {
                                             type="text"
                                             id="subject"
                                             {...register("subject", subjectOptions)}
-                                            className={`w-full bg-[#01111d] border-2 rounded-md py-1.5 px-3 text-emerald-100 placeholder-emerald-700 focus:outline-none focus:ring-1 focus:ring-emerald-500 transition-all duration-300 font-['Fira_Code'] ${errors.subject ? "border-red-500 focus:ring-red-500" : "border-emerald-900/50"}`}
+                                            className={`w-full bg-[#01111d] border-2 rounded-md py-1.5 px-3 text-emerald-100 placeholder-emerald-700 focus:outline-none focus:ring-1 focus:ring-emerald-500 transition-all duration-300 font-fira-code ${errors.subject ? "border-red-500 focus:ring-red-500" : "border-emerald-900/50"}`}
                                         />
                                     </div>
-                                    {errors.subject && <p className="text-red-400 text-xs mt-1 h-4 font-['Fira_Code']">{errors.subject.message}</p>}
+                                    {errors.subject && <p className="text-red-400 text-xs mt-1 h-4 font-fira-code">{errors.subject.message}</p>}
                                 </div>
 
                                 <div className="group relative">
-                                    <label htmlFor="message" className="flex text-emerald-400 text-xs mb-1 items-center font-['Fira_Code']">
+                                    <label htmlFor="message" className="flex text-emerald-400 text-xs mb-1 items-center font-fira-code">
                                         <span className="text-emerald-500 mr-2">&gt;</span>
                                         <FiMessageSquare className="mr-1" />
                                         message:
@@ -178,15 +178,15 @@ const Contact: React.FC = () => {
                                             placeholder="Type the message..."
                                             id="message"
                                             {...register("message", messageOptions)}
-                                            className={`w-full bg-[#01111d] border-2 rounded-md py-1.5 px-3 text-emerald-100 placeholder-emerald-700 focus:outline-none focus:ring-1 focus:ring-emerald-500 transition-all duration-300 h-24 resize-none font-['Fira_Code'] ${errors.message ? "border-red-500 focus:ring-red-500" : "border-emerald-900/50"}`}
+                                            className={`w-full bg-[#01111d] border-2 rounded-md py-1.5 px-3 text-emerald-100 placeholder-emerald-700 focus:outline-none focus:ring-1 focus:ring-emerald-500 transition-all duration-300 h-24 resize-none font-fira-code ${errors.message ? "border-red-500 focus:ring-red-500" : "border-emerald-900/50"}`}
                                         ></textarea>
                                     </div>
-                                    {errors.message && <p className="text-red-400 text-xs mt-1 h-4 font-['Fira_Code']">{errors.message.message}</p>}
+                                    {errors.message && <p className="text-red-400 text-xs mt-1 h-4 font-fira-code">{errors.message.message}</p>}
                                     <div className="flex justify-between items-center mt-1">
-                                        <div className="text-xs text-emerald-700 font-['Fira_Code']">
+                                        <div className="text-xs text-emerald-700 font-fira-code">
                                             // Press enter to start a new line
                                         </div>
-                                        <div className="text-xs text-[#fea55f] font-['Fira_Code']">
+                                        <div className="text-xs text-[#fea55f] font-fira-code">
                                             {watch("message")?.length || 0}/300
                                         </div>
                                     </div>
@@ -195,7 +195,7 @@ const Contact: React.FC = () => {
                                 <button
                                     disabled={isSubmitting}
                                     type="submit"
-                                    className="w-full bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-black font-['Fira_Code'] py-2 px-4 rounded-md transition-all duration-300 transform hover:translate-y-[-2px] disabled:opacity-70 disabled:cursor-not-allowed group relative overflow-hidden shadow-lg shadow-emerald-900/20"
+                                    className="w-full bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-black font-fira-code py-2 px-4 rounded-md transition-all duration-300 transform hover:translate-y-[-2px] disabled:opacity-70 disabled:cursor-not-allowed group relative overflow-hidden shadow-lg shadow-emerald-900/20"
                                 >
                                     <span className="relative z-10 font-bold">
                                         {isSubmitting ? (

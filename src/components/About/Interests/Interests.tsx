@@ -86,11 +86,11 @@ const Interests: React.FC = () => {
         <section className="h-[calc(100vh-8rem)] bg-[#011627] p-4 md:p-8 overflow-y-auto">
             <div className="max-w-6xl mx-auto flex flex-col">
                 <div className="text-center mb-8 sticky top-0 bg-[#011627] pt-2 pb-4 z-10">
-                    <h2 className="text-2xl md:text-3xl font-bold text-emerald-400 font-['Fira_Code'] mb-3 relative inline-block">
+                    <h2 className="text-2xl md:text-3xl font-bold text-emerald-400 font-fira-code mb-3 relative inline-block">
                         Personal Interests
                         <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-emerald-500/0 via-emerald-500/50 to-emerald-500/0"></div>
                     </h2>
-                    <p className="text-emerald-300/80 font-['Fira_Code'] text-sm md:text-base mt-4">What drives and excites me beyond code</p>
+                    <p className="text-emerald-300/80 font-fira-code text-sm md:text-base mt-4">What drives and excites me beyond code</p>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pb-4">
@@ -112,7 +112,7 @@ const Interests: React.FC = () => {
                                                     }`}>{interest.icon}</span>
                                             </div>
                                             <div>
-                                                <h3 className={`font-['Fira_Code'] transition-colors duration-300 ${index === activeInterest ? 'text-emerald-400' : 'text-emerald-500/50'
+                                                <h3 className={`font-fira-code transition-colors duration-300 ${index === activeInterest ? 'text-emerald-400' : 'text-emerald-500/50'
                                                     }`}>{interest.title}</h3>
                                                 <p className="text-sm text-emerald-300/60 line-clamp-1">{interest.description}</p>
                                             </div>
@@ -131,15 +131,15 @@ const Interests: React.FC = () => {
                             <div className="bg-emerald-500/10 p-3 rounded-lg">
                                 <span className="text-3xl text-emerald-400">{interests[activeInterest].icon}</span>
                             </div>
-                            <h3 className="text-xl font-['Fira_Code'] text-emerald-400">{interests[activeInterest].title}</h3>
+                            <h3 className="text-xl font-fira-code text-emerald-400">{interests[activeInterest].title}</h3>
                         </div>
 
-                        <p className="text-emerald-200/90 font-['Fira_Code'] text-sm md:text-base leading-relaxed mb-6">
+                        <p className="text-emerald-200/90 font-fira-code text-sm md:text-base leading-relaxed mb-6">
                             {interests[activeInterest].description}
                         </p>
 
                         <div className="bg-emerald-900/10 rounded-lg p-4 border border-emerald-900/30">
-                            <h4 className="text-sm font-['Fira_Code'] text-emerald-400 mb-3">Key Aspects</h4>
+                            <h4 className="text-sm font-fira-code text-emerald-400 mb-3">Key Aspects</h4>
                             <div className="grid grid-cols-2 gap-2">
                                 {interests[activeInterest].details.map((detail, i) => (
                                     <div

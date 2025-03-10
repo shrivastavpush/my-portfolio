@@ -33,7 +33,7 @@ const BioNav: React.FC = () => {
                         to={item.to}
                         className={linkClass}
                     >
-                        <span className="font-['Fira_Code'] text-sm sm:text-base">{item.label}</span>
+                        <span className="font-fira-code text-sm sm:text-base">{item.label}</span>
                     </NavLink>
                 ))}
             </div>

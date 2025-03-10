@@ -90,7 +90,7 @@ const Navbar: React.FC = () => {
                         <div className="flex items-center">
                             <NavLink
                                 to="/"
-                                className="pr-8 py-2 border-r-zinc-700 border-r-2 text-gray-200 hover:text-[#fea55f] transition-colors duration-300 font-['Fira_Code']"
+                                className="pr-8 py-2 border-r-zinc-700 border-r-2 text-gray-200 hover:text-[#fea55f] transition-colors duration-300 font-fira-code"
                                 onClick={handleNavLinkClick(navLinks[0])}
                             >
                                 <span className="text-[#fea55f]">&gt;</span> pushpendra_shrivastav
@@ -105,7 +105,7 @@ const Navbar: React.FC = () => {
                                     className={linkClassDesk}
                                     onClick={handleNavLinkClick(item)}
                                 >
-                                    <span className="font-['Fira_Code']">{item.label}</span>
+                                    <span className="font-fira-code">{item.label}</span>
                                 </NavLink>
                             ))}
                         </div>
@@ -134,7 +134,7 @@ const Navbar: React.FC = () => {
                                 className={linkClassMob}
                                 onClick={handleNavLinkClick(item)}
                             >
-                                <span className="font-['Fira_Code']">{item.label}</span>
+                                <span className="font-fira-code">{item.label}</span>
                             </NavLink>
                         ))}
                     </div>

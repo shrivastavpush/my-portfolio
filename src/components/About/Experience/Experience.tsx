@@ -103,11 +103,11 @@ const Experience: React.FC = () => {
         <section className="h-[calc(100vh-8rem)] bg-[#011627] p-4 md:p-8 overflow-y-auto">
             <div className="max-w-6xl mx-auto flex flex-col">
                 <div className="text-center mb-8 bg-[#011627] pt-2 pb-4 z-10">
-                    <h2 className="text-2xl md:text-3xl font-bold text-emerald-400 font-['Fira_Code'] mb-3 relative inline-block">
+                    <h2 className="text-2xl md:text-3xl font-bold text-emerald-400 font-fira-code mb-3 relative inline-block">
                         Professional Journey
                         <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-emerald-500/0 via-emerald-500/50 to-emerald-500/0"></div>
                     </h2>
-                    <p className="text-emerald-300/80 font-['Fira_Code'] text-sm md:text-base mt-4">My professional experience and achievements</p>
+                    <p className="text-emerald-300/80 font-fira-code text-sm md:text-base mt-4">My professional experience and achievements</p>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 pb-4">
@@ -130,7 +130,7 @@ const Experience: React.FC = () => {
                                                 }`} />
                                         </div>
                                         <div className="ml-3">
-                                            <h3 className={`font-['Fira_Code'] transition-colors duration-300 ${index === selectedExpIndex ? 'text-emerald-400' : 'text-emerald-500/50'
+                                            <h3 className={`font-fira-code transition-colors duration-300 ${index === selectedExpIndex ? 'text-emerald-400' : 'text-emerald-500/50'
                                                 }`}>{exp.role}</h3>
                                             <p className="text-sm text-emerald-300/60">{exp.company}</p>
                                         </div>
@@ -159,7 +159,7 @@ const Experience: React.FC = () => {
                                     <div className="bg-emerald-900/10 rounded-lg p-4 border border-emerald-900/30">
                                         <div className="flex items-center gap-2 mb-3">
                                             <FiTarget className="text-emerald-400" />
-                                            <h4 className="text-sm font-['Fira_Code'] text-emerald-400">Key Highlights</h4>
+                                            <h4 className="text-sm font-fira-code text-emerald-400">Key Highlights</h4>
                                         </div>
                                         <div className="grid grid-cols-2 gap-2">
                                             {experienceDetails[selectedExpIndex].highlights?.map((highlight, i) => (
@@ -176,7 +176,7 @@ const Experience: React.FC = () => {
                                     <div>
                                         <div className="flex items-center gap-2 mb-3">
                                             <FiAward className="text-emerald-400" />
-                                            <h4 className="text-sm font-['Fira_Code'] text-emerald-400">Skills Utilized</h4>
+                                            <h4 className="text-sm font-fira-code text-emerald-400">Skills Utilized</h4>
                                         </div>
                                         <div className="flex flex-wrap gap-2">
                                             {experienceDetails[selectedExpIndex].skills?.map((skill, i) => (
@@ -190,10 +190,10 @@ const Experience: React.FC = () => {
 
                                 {/* Responsibilities & Achievements */}
                                 <div>
-                                    <h3 className="text-xl font-['Fira_Code'] text-emerald-400 mb-4">Responsibilities & Achievements</h3>
+                                    <h3 className="text-xl font-fira-code text-emerald-400 mb-4">Responsibilities & Achievements</h3>
                                     <div className="space-y-4">
                                         {experienceDetails[selectedExpIndex].description.map((item) => (
-                                            <p key={item.id} className="text-emerald-200/90 font-['Fira_Code'] text-sm md:text-base leading-relaxed">
+                                            <p key={item.id} className="text-emerald-200/90 font-fira-code text-sm md:text-base leading-relaxed">
                                                 {item.desc}
                                             </p>
                                         ))}
