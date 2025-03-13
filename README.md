@@ -1,6 +1,7 @@
-# Developer Portfolio
+# My Portfolio
 
-![Portfolio Screenshot](screenshot.png)
+![Portfolio Screenshot](https://github.com/user-attachments/assets/1059cf03-d08e-430d-ac83-9e0403318f03)
+
 
 ## 🚀 Overview
 
