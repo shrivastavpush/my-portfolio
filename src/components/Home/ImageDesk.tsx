@@ -1,5 +1,5 @@
 import React from "react";
-import PushpendraImage from "../../assets/images/Pushpendra.jpeg";
+import PushpendraImage from "../../assets/images/Pushpendra.webp";
 
 const ImageDesk: React.FC = () => {
     return (

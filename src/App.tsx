@@ -18,8 +18,6 @@ import Project2 from './components/Project/Project2/Project2'
 import Project3 from './components/Project/Project3/Project3'
 
 import { createBrowserRouter, RouterProvider, RouteObject } from 'react-router-dom'
-
-
 interface RouteDefinition {
   index?: boolean;
   path?: string;
