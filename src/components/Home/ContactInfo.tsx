@@ -8,9 +8,9 @@ interface ContactInfoItem {
 }
 
 const phoneNumber = import.meta.env.VITE_PHONE_NUMBER || '';
-const phoneAPIurl = `https://api.whatsapp.com/send/?phone=${phoneNumber}&amp;text&amp;type=phone_number&amp;app_absent=0&text=Hello%20Pushpendra`;
+const phoneAPIurl = `https://api.whatsapp.com/send/?phone=${phoneNumber}&text=Hello%20Pushpendra`;
 const phoneDirectCall = `tel:+${phoneNumber}`;
-const emailURL = "https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=shrivastavsumit15@gmail.com";
+const emailURL = "https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=shrivastavsumit15@gmail.com";
 const githubURL = "https://github.com/shrivastavpush";
 const portFolio = "https://pushpendra-shrivastav.vercel.app/";
 const linkedin = "https://www.linkedin.com/in/pushpendra-shrivastav/";
@@ -57,13 +57,8 @@ const ContactInfo: React.FC = () => {
             setIsMobile(window.innerWidth < 768);
         };
 
-        // Initial check
         checkIfMobile();
-
-        // Add event listener for window resize
         window.addEventListener('resize', checkIfMobile);
-
-        // Cleanup
         return () => window.removeEventListener('resize', checkIfMobile);
     }, []);
 

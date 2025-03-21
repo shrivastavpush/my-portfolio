@@ -3,19 +3,6 @@ import React from 'react'
 const HomeDecor: React.FC = () => {
     return (
         <>
-            {/* <div className="absolute top-10 left-5 text-gray-800 text-xs md:text-sm font-mono opacity-40 select-none">
-                &lt;html&gt;<br />
-                &nbsp;&nbsp;&lt;head&gt;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Pushpendra Shrivastav&lt;/title&gt;<br />
-                &nbsp;&nbsp;&lt;/head&gt;<br />
-                &nbsp;&nbsp;&lt;body&gt;
-            </div>
-
-            <div className="absolute bottom-10 right-5 text-gray-800 text-xs md:text-sm font-mono opacity-40 select-none">
-                &nbsp;&nbsp;&lt;/body&gt;<br />
-                &lt;/html&gt;
-            </div> */}
-
             <div className="absolute -right-10 top-1/3 text-blue-700 text-3xl sm:text-4xl md:text-6xl font-bold opacity-10 select-none rotate-[17deg]">
                 JavaScript
             </div>
