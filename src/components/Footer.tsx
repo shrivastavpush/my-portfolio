@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdLaptopMac } from "react-icons/md";
+// import { TbBrandLeetcode } from "react-icons/tb";
 
 interface SocialLink {
     name: string;
@@ -20,6 +21,11 @@ const socialLinks: SocialLink[] = [
         url: "https://pushpendra-portfolio.netlify.app/",
         icon: MdLaptopMac,
     },
+    // {
+    //     name: "LeetCode",
+    //     url: "https://leetcode.com/u/shrivastavpush/",
+    //     icon: TbBrandLeetcode,
+    // }
 ];
 
 const Footer: React.FC = () => {

@@ -11,14 +11,13 @@ interface Education {
 
 const educationDetails: Education[] = [
     {
-        degree: "B.Tech in Mechanical Engineering",
-        school: "Rajasthan Technical University",
-        year: "2015 - 2019",
-        description: "Studied core mechanical engineering principles including thermodynamics, fluid mechanics, and machine design. Gained hands-on experience with CAD software and manufacturing processes while developing analytical problem-solving skills.",
+        degree: "Frontend Developer (React) Certificate",
+        school: "HackerRank",
+        year: "2024",
+        description: "Learned the basics to advance level of Reactjs. Learned component architecture, state management, hooks, and building responsive user interfaces with React.",
         achievements: [
-            "Made a project on electricity generation from pizeoelectric cells ",
-            "College representative for the technical fest",
-            "Ranked in top 10% of mechanical engineering class"
+            "Completed 10+ problems in Reactjs",
+            "Completed 10+ problems in JavaScript",
         ]
     },
     {
@@ -42,7 +41,18 @@ const educationDetails: Education[] = [
             "Mastered CSS Grid and Flexbox",
             "Implemented modern design principles"
         ]
-    }
+    },
+    {
+        degree: "B.Tech in Mechanical Engineering",
+        school: "Rajasthan Technical University",
+        year: "2015 - 2019",
+        description: "Studied core mechanical engineering principles including thermodynamics, fluid mechanics, and machine design. Gained hands-on experience with CAD software and manufacturing processes while developing analytical problem-solving skills.",
+        achievements: [
+            "Made a project on electricity generation from pizeoelectric cells ",
+            "College representative for the technical fest",
+            "Ranked in top 10% of mechanical engineering class"
+        ]
+    },
 ];
 
 const Education: React.FC = () => {

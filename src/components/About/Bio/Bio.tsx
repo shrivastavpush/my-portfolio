@@ -22,13 +22,13 @@ const Bio: React.FC = () => {
         {
             category: "Backend",
             icon: <FiDatabase />,
-            items: ["Node.js", "Express.js", "MongoDB", "RESTful APIs"],
+            items: ["Node.js", "Express.js", "MongoDB", "RESTful APIs", "Firebase", "GraphQL"],
             description: "Building scalable server-side applications and APIs with modern technologies."
         },
         {
             category: "Tools",
             icon: <FiTool />,
-            items: ["VS Code", "Git", "Webpack", "Docker", "Postman"],
+            items: ["Git", "Webpack", "Docker", "Postman", "NPM", "Yarn"],
             description: "Utilizing industry-standard development tools to ensure efficient workflow and quality code."
         },
         {
@@ -90,7 +90,7 @@ const Bio: React.FC = () => {
                                 {skills[activeSkill].items.map((item, itemIndex) => (
                                     <div
                                         key={itemIndex}
-                                        className="bg-emerald-900/10 rounded-lg p-3 border border-emerald-900/30 hover:border-emerald-500/50 transition-all duration-300"
+                                        className="bg-emerald-900/10 rounded-lg p-3 border border-emerald-900/30"
                                     >
                                         <p className="text-emerald-200/90 font-fira-code text-sm flex items-center">
                                             <span className="text-emerald-500/80 mr-2">›</span>
