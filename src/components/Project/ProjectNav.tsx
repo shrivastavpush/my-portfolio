@@ -15,6 +15,7 @@ const projectLinks: NavLinkEntry[] = [
     { to: "project_1", label: "_project1" },
     { to: "project_2", label: "_project2" },
     { to: "project_3", label: "_project3" },
+    { to: "project_4", label: "_project4" },
 ];
 
 const ProjectNav: React.FC = () => {
