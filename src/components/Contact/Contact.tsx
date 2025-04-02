@@ -2,12 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useForm, RegisterOptions } from "react-hook-form";
 import { FiSend, FiUser, FiMail, FiMessageSquare, FiTag, FiCode, FiCheckCircle } from "react-icons/fi";
 import ContactDecor from "./ContactDecor";
-interface FormData {
-    name: string;
-    email: string;
-    subject: string;
-    message: string;
-}
+import { FormData } from "../Types";
 
 const nameOptions: RegisterOptions<FormData, "name"> = {
     required: { value: true, message: "Name required" },

@@ -1,22 +1,8 @@
 import React, { useState } from "react";
 import { FiBriefcase, FiMapPin, FiCalendar, FiAward, FiTarget } from "react-icons/fi";
+import { ExperienceDetails } from "../../Types";
 
-interface ExperienceDescription {
-    id: number;
-    desc: string;
-}
-
-interface Experience {
-    role: string;
-    company: string;
-    period: string;
-    location: string;
-    description: ExperienceDescription[];
-    skills?: string[];
-    highlights?: string[];
-}
-
-const experienceDetails: Experience[] = [
+const experienceDetails: ExperienceDetails[] = [
     {
         role: "Software Developer",
         company: "DePronto Infotech",

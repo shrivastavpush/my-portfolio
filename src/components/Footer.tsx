@@ -1,14 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { SocialLink } from "../components/Types";
+
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdLaptopMac } from "react-icons/md";
 // import { TbBrandLeetcode } from "react-icons/tb";
-
-interface SocialLink {
-    name: string;
-    url: string;
-    icon: React.ComponentType<{ className?: string }>;
-}
 
 const socialLinks: SocialLink[] = [
     {

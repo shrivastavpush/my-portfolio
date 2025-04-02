@@ -1,12 +1,7 @@
 import React from 'react';
 import { FiGithub, FiExternalLink, FiCode, FiLayout, FiTool } from 'react-icons/fi';
 import News_App from '../../../assets/images/news.webp';
-
-interface TechStack {
-    category: string;
-    items: string[];
-    icon: React.ReactNode;
-}
+import { TechStack } from '../../../components/Types';
 
 const Project3: React.FC = () => {
     const projectDetails = {

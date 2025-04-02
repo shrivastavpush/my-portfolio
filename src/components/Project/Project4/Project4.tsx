@@ -1,12 +1,7 @@
 import React from 'react';
 import { FiGithub, FiExternalLink, FiCode, FiTool, FiServer } from 'react-icons/fi';
 import Budgee from '../../../assets/images/Budgee.webp';
-
-interface TechStack {
-    category: string;
-    items: string[];
-    icon: React.ReactNode;
-}
+import { TechStack } from '../../../components/Types';
 
 const Project4: React.FC = () => {
     const projectDetails = {

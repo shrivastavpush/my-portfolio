@@ -1,11 +1,5 @@
 import React, { useState, useEffect } from 'react'
-
-interface ContactInfoItem {
-    label: string;
-    variableName: string;
-    value: string;
-    link: string;
-}
+import { ContactInfoItem } from '../Types';
 
 const phoneNumber = import.meta.env.VITE_PHONE_NUMBER || '';
 const phoneAPIurl = `https://api.whatsapp.com/send/?phone=${phoneNumber}&text=Hello%20Pushpendra`;

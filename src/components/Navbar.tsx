@@ -1,16 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { MdOutlineMenu, MdClose } from "react-icons/md";
+import { NavLinkEntry } from '../components/Types';
 
 const Navbar: React.FC = () => {
-
-    // Types
-    interface NavLinkEntry {
-        to: string;
-        label: string;
-        onClick?: (event: React.MouseEvent<HTMLElement>) => void;
-    }
-
     type ToggleMobileMenuFunction = () => void;
     type HandleAboutClickFunction = (event: React.MouseEvent<HTMLElement>) => void;
     type HandleProjectClickFunction = (event: React.MouseEvent<HTMLElement>) => void;
@@ -54,7 +47,6 @@ const Navbar: React.FC = () => {
             ? "block w-full py-3 px-4 text-[#fea55f] border-l-4 border-[#fea55f] bg-white/10 backdrop-blur-sm rounded-md transition-all duration-300 font-medium"
             : "block w-full py-3 px-4 text-gray-300 border-l-2 border-transparent hover:text-white hover:border-white/20 hover:bg-white/5 transition-all duration-300 rounded-md";
 
-    // navigate for /about & /project nested navigation
     const navigate = useNavigate();
 
     const handleAboutClick: HandleAboutClickFunction = (event) => {
@@ -81,7 +73,6 @@ const Navbar: React.FC = () => {
 
     return (
         <>
-            {/* Add a smaller spacer div to prevent content from being hidden behind the navbar */}
             <div className="h-13 lg:h-12"></div>
 
             <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-[#011627]/90 backdrop-blur-md shadow-lg' : 'bg-[#011627]'}`}>

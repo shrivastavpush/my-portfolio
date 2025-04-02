@@ -1,13 +1,6 @@
-import React, { ReactElement, useState } from "react";
+import React, { useState } from "react";
 import { FiCode, FiDatabase, FiTool, FiGitBranch, FiChevronRight } from "react-icons/fi";
-import { IconType } from "react-icons";
-
-interface Skill {
-    category: string;
-    icon: ReactElement<IconType>;
-    items: string[];
-    description: string;
-}
+import { Skill } from "../../Types";
 
 const Bio: React.FC = () => {
     const [activeSkill, setActiveSkill] = useState<number>(0);

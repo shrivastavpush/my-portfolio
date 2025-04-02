@@ -1,15 +1,8 @@
 import React from "react";
 import { FiCalendar, FiBookOpen, FiInfo, FiAward } from "react-icons/fi";
+import { EducationDetails } from "../../Types";
 
-interface Education {
-    degree: string;
-    school: string;
-    year: string;
-    description: string;
-    achievements?: string[];
-}
-
-const educationDetails: Education[] = [
+const educationDetails: EducationDetails[] = [
     {
         degree: "Frontend Developer (React) Certificate",
         school: "HackerRank",

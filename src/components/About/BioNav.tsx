@@ -1,15 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
-interface LinkClassNameArgs {
-    isActive: boolean;
-    isPending: boolean;
-}
-
-interface NavLinkEntry {
-    to: string;
-    label: string;
-}
+import { LinkClassNameArgs, NavLinkEntry } from "../Types";
 
 const bioLinks: NavLinkEntry[] = [
     { to: "bio", label: "_bio" },

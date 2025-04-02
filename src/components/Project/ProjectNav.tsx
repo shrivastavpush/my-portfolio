@@ -1,15 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router";
-
-interface LinkClassNameArgs {
-    isActive: boolean;
-    isPending: boolean;
-}
-
-interface NavLinkEntry {
-    to: string;
-    label: string;
-}
+import { NavLinkEntry, LinkClassNameArgs } from "../../components/Types";
 
 const projectLinks: NavLinkEntry[] = [
     { to: "project_1", label: "_project1" },

@@ -1,15 +1,8 @@
-import React, { ReactElement, useState } from "react";
+import React, { useState } from "react";
 import { FiMonitor, FiGithub, FiLayout, FiMusic, FiCamera, FiMapPin, FiChevronRight } from "react-icons/fi";
-import { IconType } from "react-icons";
+import { InterestDetails } from "../../Types";
 
-interface Interest {
-    title: string;
-    description: string;
-    icon: ReactElement<IconType>;
-    details: string[];
-}
-
-const interests: Interest[] = [
+const interests: InterestDetails[] = [
     {
         title: "Web Development",
         description: "Building modern web applications with React and TypeScript. I'm passionate about creating responsive, accessible, and performant web experiences that solve real-world problems.",
@@ -21,7 +14,6 @@ const interests: Interest[] = [
             "Modern Frameworks"
         ]
     },
-
     {
         title: "UI/UX Design",
         description: "Creating intuitive and beautiful user interfaces. I focus on user-centered design principles to craft experiences that are not only visually appealing but also functional and accessible to all users.",
@@ -52,7 +44,6 @@ const interests: Interest[] = [
             "Vocal Performance",
             "Guitar Playing",
             "Music Theory",
-            // "Song Writing"
         ]
     },
     {
@@ -63,7 +54,6 @@ const interests: Interest[] = [
             "Digital Photography",
             "Composition",
             "Post-processing",
-            // "Visual Storytelling"
         ]
     },
     {
@@ -72,7 +62,6 @@ const interests: Interest[] = [
         icon: <FiGithub />,
         details: [
             "Project Contributions",
-            // "Community Engagement",
             "Code Reviews",
             "Documentation"
         ]

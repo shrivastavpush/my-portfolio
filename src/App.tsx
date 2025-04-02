@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import Home from './components/Home/Home'
@@ -19,11 +19,7 @@ import Project3 from './components/Project/Project3/Project3'
 import Project4 from './components/Project/Project4/Project4'
 
 import { createBrowserRouter, RouterProvider, RouteObject } from 'react-router-dom'
-interface RouteDefinition {
-  index?: boolean;
-  path?: string;
-  element: ReactNode;
-}
+import { RouteDefinition } from './components/Types'
 
 const aboutChild: RouteDefinition[] = [
   { index: true, element: <Bio /> },
