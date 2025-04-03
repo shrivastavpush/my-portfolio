@@ -8,7 +8,7 @@ const Project4: React.FC = () => {
         title: "Budgee - Your Personal Budget Manager",
         description: "Budgee is a user-friendly budget management app designed to help you track your income and expenses, set financial goals, and achieve them. It offers a clean, intuitive interface that makes budgeting easy and fun.",
         image: Budgee,
-        liveLink: "https://budgee-rho.vercel.app/login",
+        liveLink: "https://budgeee.vercel.app/login",
         githubLink: "https://github.com/shrivastavpush/budgee.git",
         techStack: [
             {
