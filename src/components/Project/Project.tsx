@@ -11,17 +11,18 @@ const Project: React.FC = () => {
     const showProjectGrid = location.pathname === '/projects/all';
 
     return (
-        <div className="flex flex-col w-full h-[calc(100vh-90px)] bg-[#011627]">
-            <ProjectNav />
-            <div className="flex-1 overflow-y-auto">
-                {showProjectGrid && (
-                    <div className="p-8">
-                        {/* Background elements */}
-                        <div className="fixed top-0 left-0 w-full h-full bg-gradient-to-br from-[#011627] to-[#011627] opacity-50 z-0"></div>
-                        <div className="fixed top-20 left-10 w-64 h-64 rounded-full bg-[#0f3460] opacity-20 blur-3xl"></div>
-                        <div className="fixed bottom-20 right-10 w-80 h-80 rounded-full bg-[#e94560] opacity-10 blur-3xl"></div>
+        <div className="flex flex-col w-full min-h-[calc(100vh-90px)] bg-[#011627] relative">
+            {/* Background elements moved here and given negative z-index */}
+            <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#011627] to-[#011627] opacity-50"></div>
+            <div className="absolute top-20 left-10 -z-10 w-64 h-64 rounded-full bg-[#0f3460] opacity-20 blur-3xl"></div>
+            <div className="absolute bottom-20 right-10 -z-10 w-80 h-80 rounded-full bg-[#e94560] opacity-10 blur-3xl"></div>
 
-                        <div className="max-w-6xl mx-auto w-full relative z-10">
+            <ProjectNav />
+
+            <div className="flex-1">
+                {showProjectGrid && (
+                    <div className="py-20">
+                        <div className="max-w-6xl mx-auto w-full">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {typedProjectsData.projects.map((project) => (
                                     <Link

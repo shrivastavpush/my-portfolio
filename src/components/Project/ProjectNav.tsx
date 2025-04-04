@@ -12,7 +12,7 @@ const ProjectNav: React.FC = () => {
             : "relative px-3 sm:px-4 py-2 sm:py-2.5 text-gray-300 border-b-2 border-transparent transition-all duration-300 hover:text-white hover:border-white/20 whitespace-nowrap";
 
     return (
-        <nav className="flex w-full items-center justify-start text-gray-300 bg-[#011627] overflow-x-auto scrollbar-hide border-b border-white/10 shadow-sm">
+        <nav className="flex w-full items-center justify-start text-gray-300 bg-[#011627] overflow-x-auto scrollbar-hide border-b border-white/10 shadow-sm fixed">
             <div className="flex items-center w-full px-2 sm:px-4">
                 <NavLink
                     to="all"
