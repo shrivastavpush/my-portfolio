@@ -1,6 +1,6 @@
 import React from "react";
 import { FiCalendar, FiBookOpen, FiInfo, FiAward } from "react-icons/fi";
-import { EducationDetails } from "../../Types";
+import { EducationDetails } from "../../../types/Types";
 
 const educationDetails: EducationDetails[] = [
     {

@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { FiGithub, FiExternalLink, FiCode, FiLayout, FiTool, FiLayers, FiServer } from 'react-icons/fi';
 import projectsData from '../../data/projects.json';
-import { ProjectsData, TechStackItem } from '../Types';
+import { ProjectsData, TechStackItem } from '../../types/Types';
 
 const typedProjectsData = projectsData as ProjectsData;
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import projectsData from '../../data/projects.json';
-import { ProjectsData, LinkClassNameArgs } from '../Types';
+import { ProjectsData, LinkClassNameArgs } from '../../types/Types';
 
 const typedProjectsData = projectsData as ProjectsData;
 

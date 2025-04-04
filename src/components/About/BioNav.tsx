@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { LinkClassNameArgs, NavLinkEntry } from "../Types";
+import { LinkClassNameArgs, NavLinkEntry } from "../../types/Types";
 
 const bioLinks: NavLinkEntry[] = [
     { to: "bio", label: "_bio" },

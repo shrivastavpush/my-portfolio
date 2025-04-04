@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { NavLink, useRouteError } from 'react-router-dom';
 import { BiErrorAlt } from 'react-icons/bi';
 import { FiArrowLeft } from 'react-icons/fi';
-import { RouteErrorWithMessage } from '../components/Types';
+import { RouteErrorWithMessage } from '../types/Types';
 
 const NotFoundPage: React.FC = () => {
     const error = useRouteError() as RouteErrorWithMessage;

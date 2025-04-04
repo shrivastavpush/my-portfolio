@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { SocialLink } from "../components/Types";
+import { SocialLink } from "../types/Types";
 
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdLaptopMac } from "react-icons/md";

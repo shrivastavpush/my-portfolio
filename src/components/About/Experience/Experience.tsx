@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FiBriefcase, FiMapPin, FiCalendar, FiAward, FiTarget } from "react-icons/fi";
-import { ExperienceDetails } from "../../Types";
+import { ExperienceDetails } from "../../../types/Types";
 
 const experienceDetails: ExperienceDetails[] = [
     {

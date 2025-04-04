@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FiMonitor, FiGithub, FiLayout, FiMusic, FiCamera, FiMapPin, FiChevronRight } from "react-icons/fi";
-import { InterestDetails } from "../../Types";
+import { InterestDetails } from "../../../types/Types";
 
 const interests: InterestDetails[] = [
     {

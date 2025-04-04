@@ -16,7 +16,7 @@ import Project from './components/Project/Project'
 import ProjectDetail from './components/Project/ProjectDetail'
 
 import { createBrowserRouter, RouterProvider, RouteObject, Navigate } from 'react-router-dom'
-import { RouteDefinition } from './components/Types'
+import { RouteDefinition } from './types/Types'
 
 const aboutChild: RouteDefinition[] = [
   { index: true, element: <Bio /> },

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import projectsData from '../../data/projects.json';
-import { ProjectsData } from '../Types';
+import { ProjectsData } from '../../types/Types';
 import ProjectNav from './ProjectNav';
 
 const typedProjectsData = projectsData as ProjectsData;

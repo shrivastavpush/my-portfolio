@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { MdOutlineMenu, MdClose } from "react-icons/md";
-import { NavLinkEntry } from '../components/Types';
+import { NavLinkEntry } from '../types/Types';
 
 const Navbar: React.FC = () => {
     type ToggleMobileMenuFunction = () => void;
