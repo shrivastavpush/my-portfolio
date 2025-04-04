@@ -1,33 +1,28 @@
 import React from 'react';
-import { FiGithub, FiExternalLink, FiCode, FiLayout, FiTool } from 'react-icons/fi';
-import CaseConverter from '../../../assets/images/Case-Converter.webp';
-import { TechStack } from '../../../components/Types';
+import { useParams, useNavigate } from 'react-router-dom';
+import { FiGithub, FiExternalLink, FiCode, FiLayout, FiTool, FiLayers, FiServer } from 'react-icons/fi';
+import projectsData from '../../data/projects.json';
+import { ProjectsData, TechStackItem } from '../Types';
 
-const Project2: React.FC = () => {
-    const projectDetails = {
-        title: "Case Converter",
-        description: "A user-friendly text case conversion tool that helps users transform text between different cases. Features include converting to uppercase, lowercase, sentence case, and alternating case, with additional utilities like removing extra spaces and text copying functionality.",
-        image: CaseConverter,
-        liveLink: "https://push-case-converter.netlify.app/",
-        githubLink: "https://github.com/404",
-        techStack: [
-            {
-                category: "Frontend",
-                items: ["React", "Bootstrap", "HTML5"],
-                icon: <FiCode />
-            },
-            {
-                category: "UI/UX",
-                items: ["Responsive Design", "Dark Theme", "User-friendly Interface"],
-                icon: <FiLayout />
-            },
-            {
-                category: "Features",
-                items: ["Text Case Conversion", "Copy to Clipboard", "Word Counter"],
-                icon: <FiTool />
-            }
-        ] as TechStack[]
-    };
+const typedProjectsData = projectsData as ProjectsData;
+
+const iconMap = {
+    FiCode: <FiCode />,
+    FiLayout: <FiLayout />,
+    FiTool: <FiTool />,
+    FiLayers: <FiLayers />,
+    FiServer: <FiServer />
+};
+
+const ProjectDetail: React.FC = () => {
+    const { projectId } = useParams<{ projectId: string }>();
+    const navigate = useNavigate();
+    const project = typedProjectsData.projects.find(p => p.id === projectId);
+
+    if (!project) {
+        navigate('/projects');
+        return null;
+    }
 
     return (
         <section className="flex flex-col w-full h-[83vh] bg-[#1a1a2e] p-8 relative overflow-hidden">
@@ -39,14 +34,14 @@ const Project2: React.FC = () => {
             <div className="max-w-6xl mx-auto w-full h-full flex flex-col gap-6 z-10">
                 {/* Project Header */}
                 <div className="text-center backdrop-blur-sm bg-[#16213e]/50 p-4 sm:p-6 rounded-2xl border border-[#e94560]/20">
-                    <h2 className="text-xl sm:text-2xl font-bold text-[#e94560] font-fira-code mb-2 sm:mb-3">{projectDetails.title}</h2>
+                    <h2 className="text-xl sm:text-2xl font-bold text-[#e94560] font-fira-code mb-2 sm:mb-3">{project.title}</h2>
                     <p className="text-sm sm:text-base text-gray-300 font-fira-code leading-relaxed max-w-5xl mx-auto">
-                        {projectDetails.description}
+                        {project.description}
                     </p>
                     {/* Links */}
                     <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mt-3 sm:mt-4">
                         <a
-                            href={projectDetails.githubLink}
+                            href={project.github}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center justify-center gap-2 bg-[#0f3460] hover:bg-[#0f3460]/80 text-white px-3 sm:px-4 py-2 rounded-lg transition-colors duration-300 w-full sm:w-auto"
@@ -55,7 +50,7 @@ const Project2: React.FC = () => {
                             <span className="font-fira-code text-xs sm:text-sm">GitHub</span>
                         </a>
                         <a
-                            href={projectDetails.liveLink}
+                            href={project.liveDemo}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center justify-center gap-2 bg-[#e94560] hover:bg-[#e94560]/80 text-white px-3 sm:px-4 py-2 rounded-lg transition-colors duration-300 w-full sm:w-auto"
@@ -77,8 +72,8 @@ const Project2: React.FC = () => {
                             </div>
                         </div>
                         <img
-                            src={projectDetails.image}
-                            alt={projectDetails.title}
+                            src={project.image}
+                            alt={project.title}
                             className="w-full h-[calc(100%-2rem)] object-cover"
                         />
                     </div>
@@ -86,15 +81,17 @@ const Project2: React.FC = () => {
                     {/* Tech Stack */}
                     <div className="w-full lg:w-1/3 flex flex-col min-h-0">
                         <div className="space-y-4 overflow-y-auto pr-2 flex-1">
-                            {projectDetails.techStack.map((tech, index) => (
+                            {project.techStack.map((tech: TechStackItem, index: number) => (
                                 <div key={index} className="group">
                                     <div className="bg-[#16213e] rounded-xl p-6 border border-[#0f3460] transition-all duration-300 group-hover:shadow-[0_0_15px_rgba(233,69,96,0.2)] group-hover:border-[#e94560]/50">
                                         <div className="flex items-center mb-4">
-                                            <span className="text-[#e94560] text-xl mr-3 bg-[#0f3460]/50 p-2 rounded-lg">{tech.icon}</span>
+                                            <span className="text-[#e94560] text-xl mr-3 bg-[#0f3460]/50 p-2 rounded-lg">
+                                                {iconMap[tech.icon]}
+                                            </span>
                                             <h4 className="text-lg font-fira-code text-white">{tech.category}</h4>
                                         </div>
                                         <ul className="space-y-2">
-                                            {tech.items.map((item, itemIndex) => (
+                                            {tech.items.map((item: string, itemIndex: number) => (
                                                 <li key={itemIndex} className="text-gray-300 font-fira-code text-sm flex items-center">
                                                     <span className="text-[#e94560] mr-2">›</span>
                                                     {item}
@@ -112,4 +109,4 @@ const Project2: React.FC = () => {
     );
 };
 
-export default Project2;
+export default ProjectDetail; 

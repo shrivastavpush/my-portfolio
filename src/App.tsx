@@ -13,12 +13,9 @@ import Interests from './components/About/Interests/Interests'
 import NotFoundPage from './components/NotFoundPage'
 
 import Project from './components/Project/Project'
-import Project1 from './components/Project/Project1/Project1'
-import Project2 from './components/Project/Project2/Project2'
-import Project3 from './components/Project/Project3/Project3'
-import Project4 from './components/Project/Project4/Project4'
+import ProjectDetail from './components/Project/ProjectDetail'
 
-import { createBrowserRouter, RouterProvider, RouteObject } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, RouteObject, Navigate } from 'react-router-dom'
 import { RouteDefinition } from './components/Types'
 
 const aboutChild: RouteDefinition[] = [
@@ -27,14 +24,6 @@ const aboutChild: RouteDefinition[] = [
   { path: "education", element: <Education /> },
   { path: "experience", element: <Experience /> },
   { path: "interests", element: <Interests /> }
-]
-
-const projectChild: RouteDefinition[] = [
-  { index: true, element: <Project1 /> },
-  { path: "project_1", element: <Project1 /> },
-  { path: "project_2", element: <Project2 /> },
-  { path: "project_3", element: <Project3 /> },
-  { path: "project_4", element: <Project4 /> },
 ]
 
 const routes: RouteObject[] = [
@@ -50,7 +39,11 @@ const routes: RouteObject[] = [
   {
     path: "/projects",
     element: (<> <Navbar /> <Project /> <Footer /> </>),
-    children: projectChild
+    children: [
+      { index: true, element: <Navigate to="all" replace /> },
+      { path: "all", element: null },
+      { path: ":projectId", element: <ProjectDetail /> }
+    ]
   },
   {
     path: "/contact",

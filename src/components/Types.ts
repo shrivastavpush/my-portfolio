@@ -12,10 +12,6 @@ export interface RouteDefinition {
 export interface NavLinkEntry {
     to: string;
     label: string;
-}
-
-//navbar
-export interface NavLinkEntry {
     onClick?: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
@@ -86,7 +82,7 @@ export interface TechStack {
 //link class name args
 export interface LinkClassNameArgs {
     isActive: boolean;
-    isPending: boolean;
+    isPending?: boolean;
 }
 
 //social link
@@ -100,4 +96,25 @@ export interface SocialLink {
 export interface RouteErrorWithMessage {
     message?: string;
     [key: string]: any;
+}
+
+//project types
+export interface TechStackItem {
+    category: string;
+    items: string[];
+    icon: 'FiCode' | 'FiLayout' | 'FiTool' | 'FiLayers' | 'FiServer';
+}
+
+export interface Project {
+    id: string;
+    title: string;
+    description: string;
+    image: string;
+    github: string;
+    liveDemo: string;
+    techStack: TechStackItem[];
+}
+
+export interface ProjectsData {
+    projects: Project[];
 }

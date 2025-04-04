@@ -56,7 +56,7 @@ const Navbar: React.FC = () => {
 
     const handleProjectClick: HandleProjectClickFunction = (event) => {
         event.preventDefault();
-        navigate('/projects/project_1');
+        navigate('/projects/all');
     };
 
     const navLinks: NavLinkEntry[] = [
