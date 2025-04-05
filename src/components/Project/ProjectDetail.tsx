@@ -25,7 +25,8 @@ const ProjectDetail: React.FC = () => {
     }
 
     return (
-        <section className="flex flex-col w-full h-[83vh] bg-[#1a1a2e] p-8 relative overflow-hidden">
+        <section className="flex flex-col w-full h-[calc(100vh-70px)] bg-[#1a1a2e] p-8 relative overflow-hidden">
+
             {/* Background elements */}
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#1a1a2e] to-[#16213e] z-0"></div>
             <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-[#0f3460] opacity-20 blur-3xl"></div>

@@ -91,7 +91,6 @@ export const projectsData: Project[] = [
                 "category": "UI/UX",
                 "items": [
                     "Responsive Cards",
-                    "Category Filters",
                     "Dynamic Loading"
                 ],
                 "icon": "FiLayout"
@@ -112,22 +111,31 @@ export const projectsData: Project[] = [
         "title": "Budgee - Expense Tracker",
         "description": "A comprehensive expense tracking application that helps users manage their finances effectively. Features include expense categorization, budget setting, and financial analytics.",
         "image": Budgee,
-        "github": "https://github.com/404",
-        "liveDemo": "https://budgee-expense-tracker.netlify.app",
+        "github": "https://github.com/shrivastavpush/budgee",
+        "liveDemo": "https://budgeee.vercel.app/",
         "techStack": [
             {
                 "category": "Frontend",
                 "items": [
-                    "React",
-                    "TypeScript",
-                    "Tailwind CSS"
+                    "React.js",
+                    "Tailwind CSS",
+                    "React Router",
+                    "Recharts"
                 ],
                 "icon": "FiCode"
             },
             {
+                "category": "Backend",
+                "items": [
+                    "Node.js",
+                    "Express.js",
+                    "MongoDB"
+                ],
+                "icon": "FiServer"
+            },
+            {
                 "category": "State Management",
                 "items": [
-                    "Redux Toolkit",
                     "Local Storage",
                     "Context API"
                 ],
