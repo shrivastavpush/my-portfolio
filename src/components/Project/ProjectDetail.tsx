@@ -1,10 +1,10 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { FiGithub, FiExternalLink, FiCode, FiLayout, FiTool, FiLayers, FiServer } from 'react-icons/fi';
-import projectsData from '../../data/projects.json';
+import { projectsData } from '../../data/projects';
 import { ProjectsData, TechStackItem } from '../../types/Types';
 
-const typedProjectsData = projectsData as ProjectsData;
+const typedProjectsData = projectsData as unknown as ProjectsData;
 
 const iconMap = {
     FiCode: <FiCode />,
@@ -17,7 +17,7 @@ const iconMap = {
 const ProjectDetail: React.FC = () => {
     const { projectId } = useParams<{ projectId: string }>();
     const navigate = useNavigate();
-    const project = typedProjectsData.projects.find(p => p.id === projectId);
+    const project = typedProjectsData.find(p => p.id === projectId);
 
     if (!project) {
         navigate('/projects');

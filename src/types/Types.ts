@@ -17,10 +17,9 @@ export interface NavLinkEntry {
 
 //about
 export interface Skill {
+    name: string;
+    icon: string;
     category: string;
-    icon: ReactElement<IconType>;
-    items: string[];
-    description: string;
 }
 
 //education
@@ -89,7 +88,7 @@ export interface LinkClassNameArgs {
 export interface SocialLink {
     name: string;
     url: string;
-    icon: React.ComponentType<{ className?: string }>;
+    icon: string;
 }
 
 //route error with message
@@ -102,7 +101,7 @@ export interface RouteErrorWithMessage {
 export interface TechStackItem {
     category: string;
     items: string[];
-    icon: 'FiCode' | 'FiLayout' | 'FiTool' | 'FiLayers' | 'FiServer';
+    icon: string;
 }
 
 export interface Project {
@@ -115,6 +114,31 @@ export interface Project {
     techStack: TechStackItem[];
 }
 
-export interface ProjectsData {
-    projects: Project[];
+export interface NavItem {
+    label: string;
+    path: string;
+    icon: string;
 }
+
+export interface Experience {
+    role: string;
+    company: string;
+    duration: string;
+    description: string[];
+    skills: string[];
+}
+
+export interface Education {
+    degree: string;
+    institution: string;
+    duration: string;
+    description: string;
+}
+
+export interface ContactFormData {
+    name: string;
+    email: string;
+    message: string;
+}
+
+export type ProjectsData = Project[];

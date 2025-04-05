@@ -1,10 +1,7 @@
 import React from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import projectsData from '../../data/projects.json';
-import { ProjectsData } from '../../types/Types';
+import { projectsData } from '../../data/projects';
 import ProjectNav from './ProjectNav';
-
-const typedProjectsData = projectsData as ProjectsData;
 
 const Project: React.FC = () => {
     const location = useLocation();
@@ -24,7 +21,7 @@ const Project: React.FC = () => {
                     <div className="py-20">
                         <div className="max-w-6xl mx-auto w-full">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                {typedProjectsData.projects.map((project) => (
+                                {projectsData.map((project) => (
                                     <Link
                                         key={project.id}
                                         to={`/projects/${project.id}`}

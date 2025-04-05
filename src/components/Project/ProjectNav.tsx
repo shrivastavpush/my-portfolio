@@ -1,9 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import projectsData from '../../data/projects.json';
+import { projectsData } from '../../data/projects';
 import { ProjectsData, LinkClassNameArgs } from '../../types/Types';
 
-const typedProjectsData = projectsData as ProjectsData;
+const typedProjectsData = projectsData as unknown as ProjectsData;
 
 const ProjectNav: React.FC = () => {
     const linkClass = ({ isActive }: LinkClassNameArgs): string =>
@@ -20,7 +20,7 @@ const ProjectNav: React.FC = () => {
                 >
                     <span className="font-fira-code text-sm sm:text-base">_all</span>
                 </NavLink>
-                {typedProjectsData.projects.map((project) => (
+                {typedProjectsData.map((project) => (
                     <NavLink
                         key={project.id}
                         to={project.id}
