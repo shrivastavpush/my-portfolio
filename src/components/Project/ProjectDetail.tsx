@@ -6,12 +6,12 @@ import { ProjectsData, TechStackItem } from '../../types/Types';
 
 const typedProjectsData = projectsData as unknown as ProjectsData;
 
-const iconMap = {
-    FiCode: <FiCode />,
-    FiLayout: <FiLayout />,
-    FiTool: <FiTool />,
-    FiLayers: <FiLayers />,
-    FiServer: <FiServer />
+const iconMap: Record<string, React.ReactNode> = {
+    'FiCode': <FiCode />,
+    'FiLayout': <FiLayout />,
+    'FiTool': <FiTool />,
+    'FiLayers': <FiLayers />,
+    'FiServer': <FiServer />
 };
 
 const ProjectDetail: React.FC = () => {

@@ -17,9 +17,10 @@ export interface NavLinkEntry {
 
 //about
 export interface Skill {
-    name: string;
-    icon: string;
     category: string;
+    icon: React.ReactNode;
+    items: string[];
+    description: string;
 }
 
 //education
@@ -88,7 +89,7 @@ export interface LinkClassNameArgs {
 export interface SocialLink {
     name: string;
     url: string;
-    icon: string;
+    icon: IconType;
 }
 
 //route error with message
