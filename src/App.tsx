@@ -1,9 +1,8 @@
 import React from 'react'
 import './App.css'
-import Navbar from './components/Navbar'
 import Home from './components/Home/Home'
 import Contact from './components/Contact/Contact'
-import Footer from './components/Footer'
+import RootLayout from './components/RootLayout'
 
 import About from './components/About/About'
 import Bio from './components/About/Bio/Bio'
@@ -29,29 +28,35 @@ const aboutChild: RouteDefinition[] = [
 const routes: RouteObject[] = [
   {
     path: "/",
-    element: (<> <Navbar /> <Home /> <Footer /> </>)
-  },
-  {
-    path: "/about",
-    element: (<> <Navbar /> <About /> <Footer /> </>),
-    children: aboutChild
-  },
-  {
-    path: "/projects",
-    element: (<> <Navbar /> <Project /> <Footer /> </>),
+    element: <RootLayout />,
     children: [
-      { index: true, element: <Navigate to="all" replace /> },
-      { path: "all", element: null },
-      { path: ":projectId", element: <ProjectDetail /> }
+      {
+        index: true,
+        element: <Home />
+      },
+      {
+        path: "about",
+        element: <About />,
+        children: aboutChild
+      },
+      {
+        path: "projects",
+        element: <Project />,
+        children: [
+          { index: true, element: <Navigate to="all" replace /> },
+          { path: "all", element: null },
+          { path: ":projectId", element: <ProjectDetail /> }
+        ]
+      },
+      {
+        path: "contact",
+        element: <Contact />
+      },
+      {
+        path: "*",
+        element: <NotFoundPage />
+      }
     ]
-  },
-  {
-    path: "/contact",
-    element: (<> <Navbar /> <Contact /> <Footer /> </>)
-  },
-  {
-    path: "/*",
-    element: (<> <Navbar /> <NotFoundPage /><Footer /> </>)
   }
 ]
 
